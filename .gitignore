@@ -1,0 +1,11 @@
+*.DS_Store
+bin
+target
+.classpath
+.project
+.settings
+src/main/webapp/META-INF
+.idea/artifacts
+.idea/worspace.xml
+.idea/tasks.xml
+.idea/*.iws
