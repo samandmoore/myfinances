@@ -1,27 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:security="http://www.springframework.org/schema/security"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-                           http://www.springframework.org/schema/security
-                           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+      http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+   http://www.springframework.org/schema/security
+   http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-    <security:http use-expressions="true">
-        <!--<security:intercept-url pattern="/users/login" access="permitAll"/>-->
-        <!--<security:intercept-url pattern="/**" access="isAuthenticated()"/>-->
-        <security:intercept-url pattern="/**" access="permitAll"/>
-        <security:form-login login-page="/users/login" authentication-failure-url="/login?login_error=1" />
-        <security:logout logout-url="/j_spring_security_logout" />
+    <security:global-method-security secured-annotations="enabled" />
+
+    <!-- This is where we configure Spring-Security  -->
+    <security:http auto-config="true" use-expressions="true" access-denied-page="/users/denied" >
+
+        <security:intercept-url pattern="/users/login" access="permitAll"/>
+        <security:intercept-url pattern="/**" access="isAuthenticated()"/>
+
+        <security:form-login
+                login-page="/users/login"
+                authentication-failure-url="/users/login?error=true"
+                default-target-url="/"/>
+
+        <security:logout
+                invalidate-session="true"
+                logout-success-url="/users/login"
+                logout-url="/users/logout"/>
+
     </security:http>
 
+    <!-- Declare an authentication-manager to use a custom userDetailsService -->
     <security:authentication-manager alias="authenticationManager">
-        <security:authentication-provider ref="authenticationProvider" />
+        <security:authentication-provider ref="authenticationProvider">
+            <!--<security:password-encoder ref="passwordEncoder"/>-->
+        </security:authentication-provider>
     </security:authentication-manager>
 
+    <!-- Use a Md5 encoder since the user's passwords are stored as Md5 in the database -->
+    <!--<bean class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" id="passwordEncoder"/>-->
+
+    <!-- An in-memory list of users. No need to access an external database layer.
+        See Spring Security 3.1 Reference 5.2.1 In-Memory Authentication -->
     <bean id="authenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
-        <property name="userDetailsService" ref="authService" />
+        <property name="userDetailsService" ref="userDetailsService" />
     </bean>
 
-    <bean id="authService" class="com.myfinances.services.AuthService" />
+    <bean id="userDetailsService" class="com.myfinances.services.AuthService" />
+
 
 </beans>

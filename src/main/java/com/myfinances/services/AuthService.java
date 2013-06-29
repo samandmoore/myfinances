@@ -23,7 +23,7 @@ public class AuthService implements UserDetailsService {
         User userFromDB = findUserFromDatabase(username);
 
         return new org.springframework.security.core.userdetails.User(userFromDB.getUsername(), userFromDB.getHashedPassword(),
-                AuthorityUtils.commaSeparatedStringToAuthorityList("ADMIN"));
+                AuthorityUtils.commaSeparatedStringToAuthorityList("USER"));
     }
 
     private User findUserFromDatabase(String username) {
