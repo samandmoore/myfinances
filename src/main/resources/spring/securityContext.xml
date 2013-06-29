@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <security:http use-expressions="true">
+        <!--<security:intercept-url pattern="/users/login" access="permitAll"/>-->
+        <!--<security:intercept-url pattern="/**" access="isAuthenticated()"/>-->
+        <security:intercept-url pattern="/**" access="permitAll"/>
+        <security:form-login login-page="/users/login" authentication-failure-url="/login?login_error=1" />
+        <security:logout logout-url="/j_spring_security_logout" />
+    </security:http>
+
+    <security:authentication-manager alias="authenticationManager">
+        <security:authentication-provider ref="authenticationProvider" />
+    </security:authentication-manager>
+
+    <bean id="authenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+        <property name="userDetailsService" ref="authService" />
+    </bean>
+
+    <bean id="authService" class="com.myfinances.services.AuthService" />
+
+</beans>

@@ -10,6 +10,11 @@ import javax.persistence.Id;
 @Table(name = "users")
 public class User {
 
+    public User(String username, String password) {
+        this.username = username;
+        this.hashedPassword = password;
+    }
+
     @Id
     @GeneratedValue
     private Integer id;
