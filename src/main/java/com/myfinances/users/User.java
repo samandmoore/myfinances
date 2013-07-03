@@ -10,14 +10,15 @@ import javax.persistence.Id;
 @Table(name = "users")
 public class User {
 
-    public User(String username, String password) {
+    public User(Long id, String username, String password) {
+        this.id = id;
         this.username = username;
         this.hashedPassword = password;
     }
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
 
     private String username;
 
@@ -38,11 +39,11 @@ public class User {
     private String passwordResetToken;
     private Date passwordResetTokenExpiration;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

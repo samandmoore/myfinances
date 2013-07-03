@@ -14,7 +14,8 @@ public class UserService implements IUserService {
     static Map<Long, User> users = new HashMap<>();
 
     static {
-        users.put(1L, new User("sam", "asdfasdf"));
+        User sam = new User(1L, "sam", "asdfasdf");
+        users.put(sam.getId(), sam);
     }
 
     @Override
