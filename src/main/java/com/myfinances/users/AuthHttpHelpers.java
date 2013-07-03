@@ -26,7 +26,8 @@ public class AuthHttpHelpers {
 
         // FIXME: use some auth service to create an encrypted token and store that in a cookie.
         Cookie c = new Cookie(AUTH_COOKIE_NAME, user.getId().toString());
-        c.setMaxAge(3600);
+        c.setPath("/");
+        c.setMaxAge(-1); // lasts until browser close
         response.addCookie(c);
     }
 
@@ -38,7 +39,7 @@ public class AuthHttpHelpers {
         }
 
         relevantCookie.setValue("");
-        relevantCookie.setMaxAge(-1);
+        relevantCookie.setMaxAge(0);
         response.addCookie(relevantCookie);
     }
 
