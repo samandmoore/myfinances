@@ -1,4 +1,4 @@
-package com.myfinances.viewmodels;
+package com.myfinances.home.viewmodels;
 
 public class HomeViewModel {
     public HomeViewModel() {

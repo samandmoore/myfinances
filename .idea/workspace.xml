@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a08385-c983-450d-a543-b8be554dbdc3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/myfinances/users/AuthHttpHelpers.java" afterPath="$PROJECT_DIR$/src/main/java/com/myfinances/users/AuthHttpHelpers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/myfinances/models/Account.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/myfinances/controllers/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/myfinances/home/HomeController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/myfinances/users/inputmodels/LoginInput.java" afterPath="$PROJECT_DIR$/src/main/java/com/myfinances/users/inputs/LoginInput.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/myfinances/viewmodels/HomeViewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/myfinances/home/viewmodels/HomeViewModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java" afterPath="$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/myfinances.properties" afterPath="$PROJECT_DIR$/src/main/webapp/myfinances.properties" />
     </list>
     <ignored path="myfinances.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,7 +23,7 @@
     <file path="/User.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372821662102" ignored="false" />
     <file path="/a.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372820784661" ignored="false" />
     <file path="/sample.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1368655808809" ignored="false" />
-    <file path="/UsersController.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372821194304" ignored="false" />
+    <file path="/UsersController.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372822211301" ignored="false" />
     <file path="/LoginInput.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372475387514" ignored="false" />
     <file path="/AuthService.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372476191383" ignored="false" />
     <file path="/securityContext.xml" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372481525449" ignored="false" />
@@ -32,6 +36,7 @@
     <file path="/Initializer.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372816020936" ignored="false" />
     <file path="/login.jsp" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372817561937" ignored="false" />
     <file path="/AuthHttpHelpers.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372822111915" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372822399360" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,37 +94,7 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java" line="33" class="com.myfinances.users.UsersController" package="com.myfinances.users">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/AuthHttpHelpers.java" line="12" class="com.myfinances.users.AuthHttpHelpers" package="com.myfinances.users">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/AuthHttpHelpers.java" line="46" class="com.myfinances.users.AuthHttpHelpers" package="com.myfinances.users">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -144,10 +119,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.jsp" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="login.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="6" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+            <state line="22" column="11" selection-start="563" selection-end="563" vertical-scroll-proportion="0.4532967">
               <folding />
             </state>
           </provider>
@@ -156,30 +131,8 @@
       <file leaf-file-name="UsersController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1504" selection-end="1504" vertical-scroll-proportion="0.0">
+            <state line="35" column="0" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthInterceptor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/filters/AuthInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthHttpHelpers.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/AuthHttpHelpers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="36" selection-start="1323" selection-end="1323" vertical-scroll-proportion="0.4848901">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -202,7 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/controllers/UsersController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/securityContext.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/myfinances/controllers/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myfinances/filters/AuthFilter.java" />
@@ -213,11 +165,12 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/myfinances/users/IUserService.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myfinances/users/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myfinances/users/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myfinances/filters/AuthInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myfinances/users/AuthHttpHelpers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/myfinances.properties" />
       </list>
     </option>
   </component>
@@ -558,178 +511,6 @@
               <option name="myItemId" value="myfinances" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="viewmodels" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inputmodels" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myfinances" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -952,7 +733,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884902" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -966,7 +747,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24605452" sideWeight="0.6031746" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.32936507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32936507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496361" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1047,27 +828,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/models/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.14423077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/default-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="652" selection-end="652" vertical-scroll-proportion="0.24725275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="26" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.5769231">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="19" selection-start="1919" selection-end="1919" vertical-scroll-proportion="0.36126372">
@@ -1103,16 +863,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/inputmodels/LoginInput.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/inputs/LoginInput.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="13" selection-start="56" selection-end="56" vertical-scroll-proportion="0.041208792">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="6" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1131,13 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1504" selection-end="1504" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="24" selection-start="418" selection-end="418" vertical-scroll-proportion="-0.01635514">
@@ -1149,21 +895,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/filters/AuthInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/AuthHttpHelpers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0">
+        <state line="30" column="30" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.27884614">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/AuthHttpHelpers.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/filters/AuthInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="36" selection-start="1323" selection-end="1323" vertical-scroll-proportion="0.4848901">
+        <state line="31" column="0" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.63873625">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="26" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.5769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/myfinances.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="184" selection-end="184" vertical-scroll-proportion="0.10302198">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="11" selection-start="563" selection-end="563" vertical-scroll-proportion="0.4532967">
+          <folding />
         </state>
       </provider>
     </entry>

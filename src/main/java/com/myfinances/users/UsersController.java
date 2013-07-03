@@ -1,12 +1,10 @@
 package com.myfinances.users;
 
-import com.myfinances.users.inputmodels.LoginInput;
+import com.myfinances.users.inputs.LoginInput;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,6 +30,7 @@ public class UsersController {
                               HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         if (result.hasErrors()) {
+            // TODO: show these errors in the view...
             return new ModelAndView("users/login", "", input);
         }
 

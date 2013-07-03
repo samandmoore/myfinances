@@ -1,4 +1,4 @@
-package com.myfinances.users.inputmodels;
+package com.myfinances.users.inputs;
 
 public class LoginInput {
     private String username;
