@@ -21,4 +21,12 @@
     Note that, with Spring 3.0, this tag works in Servlet MVC only!  -->
     <mvc:annotation-driven />
 
+    <!-- register interceptors -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*" />
+            <bean class="com.myfinances.filters.AuthInterceptor" autowire="constructor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 </beans>

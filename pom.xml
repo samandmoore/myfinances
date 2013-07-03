@@ -44,7 +44,7 @@
             <version>12.0</version>
         </dependency>
 
-        <!-- spring configuration -->
+        <!-- init configuration -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -143,7 +143,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
-                    <warName>stackoverfaux</warName>
+                    <warName>myfinances</warName>
                 </configuration>
             </plugin>
             <plugin>

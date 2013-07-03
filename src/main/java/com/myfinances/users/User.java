@@ -1,4 +1,4 @@
-package com.myfinances.models;
+package com.myfinances.users;
 
 import java.util.Date;
 import javax.persistence.Entity;

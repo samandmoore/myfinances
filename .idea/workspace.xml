@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a08385-c983-450d-a543-b8be554dbdc3" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/myfinances/services/AuthService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/spring/securityContext.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/myfinances/controllers/UsersController.java" afterPath="$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/myfinances/inputmodels/LoginInput.java" afterPath="$PROJECT_DIR$/src/main/java/com/myfinances/users/inputmodels/LoginInput.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/myfinances/models/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/myfinances/users/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="myfinances.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/pom.xml" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372476027393" ignored="false" />
-    <file path="/web.xml" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372480983956" ignored="false" />
-    <file path="/default-servlet.xml" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1368630918774" ignored="false" />
+    <file path="/pom.xml" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372819956119" ignored="false" />
+    <file path="/web.xml" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372817152846" ignored="false" />
+    <file path="/default-servlet.xml" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372816153670" ignored="false" />
     <file path="/HomeController.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372481146834" ignored="false" />
     <file path="/index.jsp" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1368558223777" ignored="false" />
     <file path="/Dummy.txt" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372813587605" ignored="false" />
@@ -16,13 +24,21 @@
     <file path="/Account.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1368656027478" ignored="false" />
     <file path="/myfinances.properties" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1368655657903" ignored="false" />
     <file path="/User.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372476269114" ignored="false" />
-    <file path="/a.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372474770235" ignored="false" />
+    <file path="/a.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372820784661" ignored="false" />
     <file path="/sample.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1368655808809" ignored="false" />
-    <file path="/UsersController.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372475445186" ignored="false" />
+    <file path="/UsersController.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372821194304" ignored="false" />
     <file path="/LoginInput.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372475387514" ignored="false" />
     <file path="/AuthService.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372476191383" ignored="false" />
     <file path="/securityContext.xml" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372481525449" ignored="false" />
-    <file path="/applicationContext.xml" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372479377464" ignored="false" />
+    <file path="/applicationContext.xml" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372817254691" ignored="false" />
+    <file path="/AuthFilter.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372815048685" ignored="false" />
+    <file path="/AuthInterceptor.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372820125753" ignored="false" />
+    <file path="/fragment.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372814685362" ignored="false" />
+    <file path="/UserService.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372819238118" ignored="false" />
+    <file path="/IUserService.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372818562000" ignored="false" />
+    <file path="/Initializer.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372816020936" ignored="false" />
+    <file path="/login.jsp" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372817561937" ignored="false" />
+    <file path="/AuthHttpHelpers.java" changelist="c7a08385-c983-450d-a543-b8be554dbdc3" time="1372820805485" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +95,38 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java" line="33" class="com.myfinances.users.UsersController" package="com.myfinances.users">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/UserService.java" line="35" class="com.myfinances.users.UserService" package="com.myfinances.users">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -88,76 +136,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="login.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="21" selection-start="2298" selection-end="2298" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Account.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/models/Account.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/models/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="39" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0">
+            <state line="4" column="6" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="UsersController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/controllers/UsersController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="16" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
+            <state line="33" column="0" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/controllers/HomeController.java">
+      <file leaf-file-name="AuthHttpHelpers.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/AuthHttpHelpers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/services/AuthService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="securityContext.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring/securityContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="41" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.4893617">
+            <state line="19" column="0" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1372481581000" expanded="true" signature="734:876" placeholder="..." />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginInput.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/inputmodels/LoginInput.java">
+      <file leaf-file-name="UserService.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="33" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="22" column="5" selection-start="538" selection-end="538" vertical-scroll-proportion="0.22897196">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#717#1077#0" expanded="true" />
+                <element signature="e#1066#1067#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -180,21 +196,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/web/HomeController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/viewmodels/HomeViewModel.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/myfinances.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/models/Account.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/inputmodels/LoginInput.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/models/User.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/default-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/myfinances/services/AuthService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/myfinances/controllers/UsersController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/securityContext.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/myfinances/controllers/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/filters/AuthFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/default-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/init/Initializer.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/users/IUserService.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/filters/AuthInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/users/AuthHttpHelpers.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/myfinances/users/UserService.java" />
       </list>
     </option>
   </component>
@@ -241,19 +258,7 @@
             <id>Abstraction issues</id>
           </State>
           <State>
-            <id>Android Lint</id>
-          </State>
-          <State>
             <id>Assignment issues</id>
-          </State>
-          <State>
-            <id>Assignment issuesGroovy</id>
-          </State>
-          <State>
-            <id>Assignment issuesJavaScript</id>
-          </State>
-          <State>
-            <id>CSS</id>
           </State>
           <State>
             <id>Class structure</id>
@@ -271,9 +276,6 @@
             <id>General</id>
           </State>
           <State>
-            <id>Groovy</id>
-          </State>
-          <State>
             <id>Initialization issues</id>
           </State>
           <State>
@@ -286,22 +288,10 @@
             <id>Java language level migration aids</id>
           </State>
           <State>
-            <id>JavaScript</id>
-          </State>
-          <State>
             <id>Naming conventions</id>
           </State>
           <State>
-            <id>OSGi</id>
-          </State>
-          <State>
             <id>Performance issues</id>
-          </State>
-          <State>
-            <id>Potentially confusing code constructsGroovy</id>
-          </State>
-          <State>
-            <id>Potentially confusing code constructsJavaScript</id>
           </State>
           <State>
             <id>Probable bugs</id>
@@ -311,9 +301,6 @@
           </State>
           <State>
             <id>Security issues</id>
-          </State>
-          <State>
-            <id>UI Form Problems</id>
           </State>
           <State>
             <id>toString() issues</id>
@@ -417,6 +404,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myfinances" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myfinances" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -562,7 +583,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myfinances" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myfinances" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myfinances" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inputmodels" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -622,7 +677,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inputmodels" />
+              <option name="myItemId" value="filters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -656,6 +711,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myfinances" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myfinances" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -664,9 +733,10 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Project" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="preferences.sourceCode.Java" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -683,6 +753,9 @@
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.myfinances.users" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
@@ -877,16 +950,17 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884902" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32804233" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3968254" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24605452" sideWeight="0.602122" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.397878" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24605452" sideWeight="0.6031746" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32936507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496361" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -897,7 +971,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32833582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -968,100 +1041,122 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/myfinances.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="36" selection-start="247" selection-end="247" vertical-scroll-proportion="0.1446281" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/inputmodels/LoginInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="33" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0">
+        <state line="15" column="54" selection-start="583" selection-end="583" vertical-scroll-proportion="0.20604396">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myfinances.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/models/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
+        <state line="8" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.14423077">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="39" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/schema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="471" selection-end="478" vertical-scroll-proportion="0.22727273" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="68" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="15" selection-start="481" selection-end="481" vertical-scroll-proportion="0.42674252" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/default-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="20" selection-start="877" selection-end="877" vertical-scroll-proportion="0.45454547" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/services/AuthService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
+        <state line="12" column="0" selection-start="652" selection-end="652" vertical-scroll-proportion="0.24725275">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/controllers/UsersController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="16" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
+        <state line="28" column="26" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.5769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="19" selection-start="1919" selection-end="1919" vertical-scroll-proportion="0.36126372">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="15" selection-start="0" selection-end="509" vertical-scroll-proportion="0.41208792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="39" selection-start="367" selection-end="367" vertical-scroll-proportion="0.020604396">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/IUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="69" selection-start="162" selection-end="162" vertical-scroll-proportion="0.12362637">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/3.2.2.RELEASE/spring-webmvc-3.2.2.RELEASE.jar!/org/springframework/web/servlet/ModelAndView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="0.10869565">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="21" selection-start="2298" selection-end="2298" vertical-scroll-proportion="0.0">
+        <state line="145" column="39" selection-start="5403" selection-end="5403" vertical-scroll-proportion="0.16083916">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/controllers/HomeController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/filters/AuthInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/securityContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="41" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.4893617">
+        <state line="38" column="54" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.4642857">
           <folding>
-            <marker date="1372481581000" expanded="true" signature="734:876" placeholder="..." />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/AuthHttpHelpers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/inputmodels/LoginInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="56" selection-end="56" vertical-scroll-proportion="0.041208792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="6" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/UsersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/myfinances/users/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="5" selection-start="538" selection-end="538" vertical-scroll-proportion="0.22897196">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#717#1077#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
           </folding>
         </state>
       </provider>
