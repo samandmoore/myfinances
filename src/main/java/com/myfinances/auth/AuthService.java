@@ -20,18 +20,12 @@ public class AuthService implements IAuthService {
 
     @Override
     public boolean isLoggedIn(HttpServletRequest request) {
-        return AuthHttpHelpers.getAuthCookieValue(request) != null;
+        return AuthHttpHelpers.getCurrentRequestUserId(request) != null;
     }
 
     @Override
     public User getCurrentUser(HttpServletRequest request) {
-        String authCookieValue = AuthHttpHelpers.getAuthCookieValue(request);
-
-        if (authCookieValue == null) {
-            return null;
-        }
-
-        Long userId = Long.valueOf(authCookieValue);
+        Long userId = AuthHttpHelpers.getCurrentRequestUserId(request);
 
         if (userId == null) {
             return null;

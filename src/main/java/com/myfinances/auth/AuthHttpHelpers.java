@@ -11,23 +11,31 @@ public class AuthHttpHelpers {
 
     private static final String AUTH_COOKIE_NAME = "myfinances.auth";
 
+    public static Long getCurrentRequestUserId(HttpServletRequest request) {
+        final Object requestUserId = request.getAttribute(AUTH_COOKIE_NAME);
+
+        if (requestUserId == null) {
+            return null;
+        }
+
+        return (Long)requestUserId;
+    }
+
     public static String getAuthCookieValue(HttpServletRequest request) {
-        Cookie relevantCookie = getAuthCookie(request);
+        final Cookie relevantCookie = getAuthCookie(request);
 
         if (relevantCookie == null) {
             return null;
         }
 
-        String authCookiedUserId = relevantCookie.getValue();
-
-        return authCookiedUserId;
+        return relevantCookie.getValue();
     }
 
     public static void setAuthCookie(HttpServletRequest request, HttpServletResponse response, User user) {
         request.setAttribute(AUTH_COOKIE_NAME, user.getId());
 
         // FIXME: use some auth service to create an encrypted token and store that in a cookie.
-        Cookie c = new Cookie(AUTH_COOKIE_NAME, user.getId().toString());
+        final Cookie c = new Cookie(AUTH_COOKIE_NAME, user.getId().toString());
         c.setPath("/");
         c.setMaxAge(-1); // lasts until browser close
         c.setHttpOnly(true);
@@ -35,13 +43,13 @@ public class AuthHttpHelpers {
     }
 
     public static void unsetAuthCookie(HttpServletRequest request, HttpServletResponse response) {
-        Cookie relevantCookie = getAuthCookie(request);
+        final Cookie relevantCookie = getAuthCookie(request);
 
         if (relevantCookie == null) {
             return;
         }
 
-        Cookie c = new Cookie(AUTH_COOKIE_NAME, null);
+        final Cookie c = new Cookie(AUTH_COOKIE_NAME, null);
         c.setPath("/");
         c.setMaxAge(0);
         c.setHttpOnly(true);
@@ -49,7 +57,7 @@ public class AuthHttpHelpers {
     }
 
     private static Cookie getAuthCookie(HttpServletRequest request) {
-        Cookie[] cookies = request.getCookies();
+        final Cookie[] cookies = request.getCookies();
 
         if (cookies == null || cookies.length == 0) {
             return null;
