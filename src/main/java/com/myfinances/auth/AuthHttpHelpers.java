@@ -34,7 +34,13 @@ public class AuthHttpHelpers {
     public static void setAuthCookie(HttpServletRequest request, HttpServletResponse response, User user) {
         request.setAttribute(AUTH_COOKIE_NAME, user.getId());
 
-        // FIXME: use some auth service to create an encrypted token and store that in a cookie.
+        // FIXME: create an encrypted ticket and store that in a cookie.
+        // make a AuthTicket object, then encrypt it
+        // probably needs to include:
+        // - version (based on some constant)
+        // - user id
+        // - issue date (when the ticket was created)
+        // - expiration date (when the ticket is no longer valid)
         final Cookie c = new Cookie(AUTH_COOKIE_NAME, user.getId().toString());
         c.setPath("/");
         c.setMaxAge(-1); // lasts until browser close
@@ -56,6 +62,7 @@ public class AuthHttpHelpers {
         response.addCookie(c);
     }
 
+    // TODO: make this actually return an authticket object
     private static Cookie getAuthCookie(HttpServletRequest request) {
         final Cookie[] cookies = request.getCookies();
 
