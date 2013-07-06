@@ -9,6 +9,8 @@ public interface IAuthService {
 
     boolean isLoggedIn(HttpServletRequest request);
 
+    boolean isAuthCookiePresent(HttpServletRequest request);
+
     User getCurrentUser(HttpServletRequest request);
 
     void login(HttpServletRequest request, HttpServletResponse response, User user);

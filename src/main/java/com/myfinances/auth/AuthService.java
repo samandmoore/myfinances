@@ -24,8 +24,27 @@ public class AuthService implements IAuthService {
     }
 
     @Override
+    public boolean isAuthCookiePresent(HttpServletRequest request) {
+        return AuthHttpHelpers.getAuthCookieValue(request) != null;
+    }
+
+    @Override
     public User getCurrentUser(HttpServletRequest request) {
-        Long userId = AuthHttpHelpers.getCurrentRequestUserId(request);
+        final Long userId;
+
+        if (this.isLoggedIn(request)) {
+            userId = AuthHttpHelpers.getCurrentRequestUserId(request);
+        } else if (this.isAuthCookiePresent(request)) {
+            final String val = AuthHttpHelpers.getAuthCookieValue(request);
+
+            if (val == null) {
+                return null;
+            }
+
+            userId = Long.valueOf(val);
+        } else {
+            userId = null;
+        }
 
         if (userId == null) {
             return null;

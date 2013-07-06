@@ -35,7 +35,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     }
 
     private boolean preHandleInternal(HttpServletRequest request, HttpServletResponse response) {
-        if (!authService.isLoggedIn(request)) {
+        if (!authService.isAuthCookiePresent(request)) {
             return false;
         }
 
