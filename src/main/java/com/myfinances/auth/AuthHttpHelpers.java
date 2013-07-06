@@ -1,4 +1,6 @@
-package com.myfinances.users;
+package com.myfinances.auth;
+
+import com.myfinances.users.User;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -28,6 +30,7 @@ public class AuthHttpHelpers {
         Cookie c = new Cookie(AUTH_COOKIE_NAME, user.getId().toString());
         c.setPath("/");
         c.setMaxAge(-1); // lasts until browser close
+        c.setHttpOnly(true);
         response.addCookie(c);
     }
 
@@ -38,9 +41,11 @@ public class AuthHttpHelpers {
             return;
         }
 
-        relevantCookie.setValue("");
-        relevantCookie.setMaxAge(0);
-        response.addCookie(relevantCookie);
+        Cookie c = new Cookie(AUTH_COOKIE_NAME, null);
+        c.setPath("/");
+        c.setMaxAge(0);
+        c.setHttpOnly(true);
+        response.addCookie(c);
     }
 
     private static Cookie getAuthCookie(HttpServletRequest request) {

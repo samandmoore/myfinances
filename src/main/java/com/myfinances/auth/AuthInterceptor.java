@@ -1,9 +1,10 @@
-package com.myfinances.filters;
+package com.myfinances.auth;
 
-import com.myfinances.users.AuthHttpHelpers;
-import com.myfinances.users.IUserService;
+import com.myfinances.auth.IAuthService;
+import com.myfinances.auth.AuthHttpHelpers;
 import com.myfinances.users.User;
-import com.myfinances.users.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.Assert;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 
-    private final IUserService userService = new UserService();
+    private final IAuthService authService;
+
+    @Autowired
+    public AuthInterceptor(IAuthService authService) {
+        this.authService = authService;
+    }
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -29,29 +35,23 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     }
 
     private boolean preHandleInternal(HttpServletRequest request, HttpServletResponse response) {
-        String authCookiedUserId = AuthHttpHelpers.getAuthCookieValue(request);
-
-        if (authCookiedUserId == null) {
+        if (!authService.isLoggedIn(request)) {
             return false;
         }
 
-        Long userId = Long.valueOf(authCookiedUserId);
+        User user = authService.getCurrentUser(request);
 
-        if (userId == null) {
+        if (user == null) {
             return false;
         }
 
-        User foundUser = userService.findById(userId);
+        updateRequest(request, response, user);
 
-        updateRequest(request, response, foundUser);
-
-        return foundUser != null;
+        return true;
     }
 
     private void updateRequest(HttpServletRequest request, HttpServletResponse response, User user) {
-        if (user == null) {
-            return;
-        }
+        Assert.notNull(user, "user must be logged in, cannot be null");
 
         AuthHttpHelpers.setAuthCookie(request, response, user);
     }

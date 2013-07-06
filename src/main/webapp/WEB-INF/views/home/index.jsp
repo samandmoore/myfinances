@@ -1,24 +1,22 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" isELIgnored="false" %>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta lang="en"/>
-        <title>My Finances</title>
-    </head>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-    <body>
-        <h1>Home page</h1>
+<t:layout>
 
-        <ul>
-            <li>${model.message}</li>
-        </ul>
+    <jsp:attribute name="header">
+        <h1>Welcome</h1>
+    </jsp:attribute>
+
+    <jsp:body>
+        <t:userdetails user="${model.userDetails}"/>
 
         <form action="/" method="POST">
             <input type="text" name="name" />
             <button type="submit">Say Hello</button>
         </form>
-    </body>
-</html>
-</html>
+    </jsp:body>
+
+</t:layout>

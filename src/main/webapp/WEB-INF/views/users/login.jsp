@@ -1,16 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" isELIgnored="false" %>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta lang="en"/>
-        <title>My Finances</title>
-    </head>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-    <body>
-        <h1>Sign in</h1>
+<t:layout>
 
+    <jsp:attribute name="header">
+        <h1>Sign In</h1>
+    </jsp:attribute>
+
+    <jsp:body>
         <form action="/users/login" method="POST">
             <label>Email</label>
             <input type="text" name="username" />
@@ -20,6 +20,6 @@
 
             <button type="submit">Sign In</button>
         </form>
-    </body>
-</html>
-</html>
+    </jsp:body>
+
+</t:layout>

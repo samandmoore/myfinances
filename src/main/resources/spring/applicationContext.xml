@@ -25,7 +25,7 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/*" />
-            <bean class="com.myfinances.filters.AuthInterceptor" autowire="constructor" />
+            <bean class="com.myfinances.auth.AuthInterceptor" autowire="constructor" />
         </mvc:interceptor>
     </mvc:interceptors>
 

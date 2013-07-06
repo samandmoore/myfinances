@@ -1,17 +1,36 @@
 package com.myfinances.home.viewmodels;
 
+import com.myfinances.users.User;
+
 public class HomeViewModel {
     public HomeViewModel() {
-        message = "Welcome, from the server side";
+        userDetails = new UserDetailsViewModel();
     }
 
-    public String getMessage() {
-        return message;
+    public HomeViewModel(User user) {
+        userDetails = new UserDetailsViewModel(user);
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    private UserDetailsViewModel userDetails;
+
+    public UserDetailsViewModel getUserDetails() {
+        return userDetails;
     }
 
-    private String message;
+    public static class UserDetailsViewModel {
+
+        private UserDetailsViewModel() {
+        }
+
+        private UserDetailsViewModel(User user) {
+            super();
+            this.userName = user.getUsername();
+        }
+
+        private String userName;
+
+        public String getUserName() {
+            return userName;
+        }
+    }
 }

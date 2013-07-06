@@ -1,5 +1,6 @@
 package com.myfinances.users;
 
+import com.myfinances.auth.IAuthService;
 import com.myfinances.users.inputs.LoginInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,9 @@ public class UsersController {
     @Autowired
     private IUserService userService;
 
+    @Autowired
+    private IAuthService authService;
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login() {
         return new ModelAndView("users/login");
@@ -37,7 +41,7 @@ public class UsersController {
         User user = userService.findByUsernameAndPassword(input.getUsername(), input.getPassword());
 
         if (user != null) {
-            AuthHttpHelpers.setAuthCookie(request, response, user);
+            authService.login(request, response, user);
             response.sendRedirect("/");
             return null;
         }
@@ -47,7 +51,7 @@ public class UsersController {
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpServletRequest request, HttpServletResponse response) {
-        AuthHttpHelpers.unsetAuthCookie(request, response);
+        authService.logout(request, response);
 
         return "redirect:/";
     }
