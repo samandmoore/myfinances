@@ -1,7 +1,8 @@
 package com.myfinances.auth;
 
+import com.myfinances.encrypt.IEncryptionService;
+import com.myfinances.users.IUserService;
 import com.myfinances.users.User;
-import com.myfinances.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,11 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class AuthService implements IAuthService {
 
-    private final UserService userService;
+    private final IUserService userService;
+    private final IEncryptionService encryptionService;
 
     @Autowired
-    public AuthService(UserService userService) {
+    public AuthService(IUserService userService, IEncryptionService encryptionService) {
         this.userService = userService;
+        this.encryptionService = encryptionService;
     }
 
     @Override
