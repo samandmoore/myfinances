@@ -9,3 +9,4 @@ src/main/webapp/META-INF
 .idea/worspace.xml
 .idea/tasks.xml
 .idea/*.iws
+.idea
