@@ -3,8 +3,6 @@ package com.myfinances.encrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -15,10 +13,12 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 
+import org.apache.commons.codec.binary.Base64;
+
 @Component
 public class EncryptionService implements IEncryptionService {
 
-    private final char[] PASSWORD;
+    private char[] PASSWORD;
 
     private static final byte[] SALT = {
         (byte) 0xde, (byte) 0x33, (byte) 0x10, (byte) 0x12,
@@ -26,7 +26,7 @@ public class EncryptionService implements IEncryptionService {
     };
 
     @Autowired
-    public EncryptionService(@Value("${auth.secret}") final String authSecretString) {
+    public EncryptionService(@Value("${encryptionService.secret}") String authSecretString) {
         PASSWORD = authSecretString.toCharArray();
     }
 
@@ -49,11 +49,11 @@ public class EncryptionService implements IEncryptionService {
     }
 
     private static String base64Encode(byte[] bytes) {
-        return new BASE64Encoder().encode(bytes);
+        return Base64.encodeBase64URLSafeString(bytes);
     }
 
     private static byte[] base64Decode(String property) throws IOException {
-        return new BASE64Decoder().decodeBuffer(property);
+        return Base64.decodeBase64(property);
     }
 
 }
