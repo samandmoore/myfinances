@@ -9,7 +9,6 @@ import org.joda.time.base.AbstractInstant;
  * @since 7/6/13 1:21 PM
  */
 public class AuthTicket {
-    // FIXME: create an encrypted ticket and store that in a cookie.
     // make a AuthTicket object, then encrypt it
     // probably needs to include:
     // - version (based on some constant)
@@ -65,11 +64,15 @@ public class AuthTicket {
     }
 
     public static AuthTicket fromString(String source) {
-        return new AuthTicket();
+        // FIXME: this needs to really use the other props too
+        AuthTicket ticket = new AuthTicket();
+        ticket.setUserIdentifier(source);
+
+        return ticket;
     }
 
     public String asString() {
-        // TODO: turn this into a json serialization??
-        return "this is an auth ticket!";
+        // FIXME: finish this, it should probably be json
+        return this.userIdentifier;
     }
 }

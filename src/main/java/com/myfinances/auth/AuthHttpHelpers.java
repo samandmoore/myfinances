@@ -1,13 +1,15 @@
 package com.myfinances.auth;
 
 import com.myfinances.users.User;
+import org.joda.time.base.AbstractInstant;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class AuthHttpHelpers {
-    private AuthHttpHelpers() {}
+    private AuthHttpHelpers() {
+    }
 
     private static final String AUTH_COOKIE_NAME = "myfinances.auth";
 
@@ -18,7 +20,7 @@ public class AuthHttpHelpers {
             return null;
         }
 
-        return (Long)requestUserId;
+        return (Long) requestUserId;
     }
 
     public static String getAuthCookieValue(HttpServletRequest request) {
@@ -31,8 +33,10 @@ public class AuthHttpHelpers {
         return relevantCookie.getValue();
     }
 
-    public static void setAuthCookie(HttpServletRequest request, HttpServletResponse response, User user) {
-        request.setAttribute(AUTH_COOKIE_NAME, user.getId());
+    public static void setAuthCookie(HttpServletRequest request, HttpServletResponse response,
+                                     Long userId, AbstractInstant expiresAt,
+                                     String encryptedTicket) {
+        request.setAttribute(AUTH_COOKIE_NAME, userId);
 
         // FIXME: create an encrypted ticket and store that in a cookie.
         // make a AuthTicket object, then encrypt it
@@ -41,7 +45,7 @@ public class AuthHttpHelpers {
         // - user id
         // - issue date (when the ticket was created)
         // - expiration date (when the ticket is no longer valid)
-        final Cookie c = new Cookie(AUTH_COOKIE_NAME, user.getId().toString());
+        final Cookie c = new Cookie(AUTH_COOKIE_NAME, encryptedTicket);
         c.setPath("/");
         c.setMaxAge(-1); // lasts until browser close
         c.setHttpOnly(true);

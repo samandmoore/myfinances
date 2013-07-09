@@ -1,7 +1,5 @@
 package com.myfinances.auth;
 
-import com.myfinances.auth.IAuthService;
-import com.myfinances.auth.AuthHttpHelpers;
 import com.myfinances.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
@@ -53,6 +51,6 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     private void updateRequest(HttpServletRequest request, HttpServletResponse response, User user) {
         Assert.notNull(user, "user must be logged in, cannot be null");
 
-        AuthHttpHelpers.setAuthCookie(request, response, user);
+        authService.login(request, response, user);
     }
 }

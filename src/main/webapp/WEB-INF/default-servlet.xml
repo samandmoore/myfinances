@@ -11,7 +11,4 @@
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
     </bean>
 
-    <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"-->
-          <!--p:location="myfinances.properties"/>-->
-
 </beans>
