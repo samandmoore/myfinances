@@ -56,6 +56,15 @@ public class AuthService implements IAuthService {
                 return null;
             }
 
+            if (decryptedVal.getExpiresAt() == null) {
+                return null;
+            }
+
+            // if the encrypted cookie says it's expired, it's expired!
+            if (decryptedVal.getExpiresAt().isBefore(DateTime.now(DateTimeZone.UTC))) {
+                return null;
+            }
+
             userId = Long.valueOf(decryptedVal.getUserIdentifier());
         } else {
             userId = null;
@@ -72,7 +81,7 @@ public class AuthService implements IAuthService {
     public void login(HttpServletRequest request, HttpServletResponse response, User user) {
         DateTime utcNow = DateTime.now(DateTimeZone.UTC);
         DateTime utcNowPlus1Day = utcNow.plusDays(1);
-        AuthTicket ticket = new AuthTicket(1, user.getId().toString(), utcNow, utcNowPlus1Day);
+        AuthTicket ticket = new AuthTicket(AuthTicket.CURRENT_AUTH_VERSION, user.getId().toString(), utcNow, utcNowPlus1Day);
 
         String encryptedVal = tryEncryptTicket(ticket);
 

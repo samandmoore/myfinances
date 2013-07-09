@@ -16,6 +16,9 @@ import java.util.List;
  * @since 7/6/13 1:21 PM
  */
 public class AuthTicket {
+
+    public static final int CURRENT_AUTH_VERSION = 1;
+
     // make a AuthTicket object, then encrypt it
     // probably needs to include:
     // - version (based on some constant)
