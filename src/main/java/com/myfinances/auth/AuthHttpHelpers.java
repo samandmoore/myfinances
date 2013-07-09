@@ -1,6 +1,5 @@
 package com.myfinances.auth;
 
-import com.myfinances.users.User;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.base.AbstractInstant;
@@ -9,13 +8,19 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class AuthHttpHelpers {
+/**
+ * this is intended to be a package-private helper class for dealing with request / response cookies
+ * do not use this outside of the auth package.
+ *
+ * @author Sam Moore
+ */
+class AuthHttpHelpers {
     private AuthHttpHelpers() {
     }
 
     private static final String AUTH_COOKIE_NAME = "myfinances.auth";
 
-    public static Long getCurrentRequestUserId(HttpServletRequest request) {
+    static Long getCurrentRequestUserId(HttpServletRequest request) {
         final Object requestUserId = request.getAttribute(AUTH_COOKIE_NAME);
 
         if (requestUserId == null) {
@@ -25,7 +30,7 @@ public class AuthHttpHelpers {
         return (Long) requestUserId;
     }
 
-    public static String getAuthCookieValue(HttpServletRequest request) {
+    static String getAuthCookieValue(HttpServletRequest request) {
         final Cookie relevantCookie = getAuthCookie(request);
 
         if (relevantCookie == null) {
@@ -35,7 +40,7 @@ public class AuthHttpHelpers {
         return relevantCookie.getValue();
     }
 
-    public static void setAuthCookie(HttpServletRequest request, HttpServletResponse response,
+    static void setAuthCookie(HttpServletRequest request, HttpServletResponse response,
                                      Long userId, AbstractInstant expiresAt,
                                      String encryptedTicket) {
         request.setAttribute(AUTH_COOKIE_NAME, userId);
@@ -50,7 +55,7 @@ public class AuthHttpHelpers {
         response.addCookie(c);
     }
 
-    public static void unsetAuthCookie(HttpServletRequest request, HttpServletResponse response) {
+    static void unsetAuthCookie(HttpServletRequest request, HttpServletResponse response) {
         final Cookie relevantCookie = getAuthCookie(request);
 
         if (relevantCookie == null) {
@@ -64,7 +69,6 @@ public class AuthHttpHelpers {
         response.addCookie(c);
     }
 
-    // TODO: make this actually return an authticket object
     private static Cookie getAuthCookie(HttpServletRequest request) {
         final Cookie[] cookies = request.getCookies();
 
