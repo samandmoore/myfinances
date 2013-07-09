@@ -1,6 +1,13 @@
 package com.myfinances.auth;
 
+import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
+import com.google.common.collect.Lists;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.base.AbstractInstant;
+
+import java.util.List;
 
 /**
  * TODO: documentation
@@ -64,15 +71,28 @@ public class AuthTicket {
     }
 
     public static AuthTicket fromString(String source) {
-        // FIXME: this needs to really use the other props too
+        Iterable<String> parts = Splitter.on("|")
+                .limit(4)
+                .trimResults()
+                .split(source);
+
+        List<String> finalParts = Lists.newArrayList(parts);
+
         AuthTicket ticket = new AuthTicket();
-        ticket.setUserIdentifier(source);
+        ticket.setVersion(Integer.valueOf(finalParts.get(0)).intValue());
+        ticket.setUserIdentifier(finalParts.get(1));
+        ticket.setIssuedAt(new DateTime(Long.valueOf(finalParts.get(2)), DateTimeZone.UTC));
+        ticket.setExpiresAt(new DateTime(Long.valueOf(finalParts.get(3)), DateTimeZone.UTC));
 
         return ticket;
     }
 
     public String asString() {
-        // FIXME: finish this, it should probably be json
-        return this.userIdentifier;
+        return Joiner.on('|')
+                .useForNull("")
+                .join(this.version,
+                        this.userIdentifier,
+                        this.issuedAt.getMillis(),
+                        this.expiresAt.getMillis());
     }
 }
