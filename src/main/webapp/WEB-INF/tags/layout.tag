@@ -8,6 +8,8 @@
     <head>
         <meta lang="en"/>
         <title>My Finances</title>
+        <link href="/public/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/public/css/bootstrap-responsive.min.css" rel="stylesheet" />
     </head>
     <body>
         <header id="header">

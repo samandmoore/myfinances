@@ -13,10 +13,7 @@
     <jsp:body>
         <t:userdetails user="${model.userDetails}"/>
 
-        <form action="/" method="POST">
-            <input type="text" name="name" />
-            <button type="submit">Say Hello</button>
-        </form>
+        <p>single page app goes here!</p>
     </jsp:body>
 
 </t:layout>
