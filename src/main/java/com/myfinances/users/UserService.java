@@ -2,6 +2,8 @@ package com.myfinances.users;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Sets;
+import com.myfinances.encrypt.HashingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Nullable;
@@ -11,10 +13,15 @@ import java.util.Set;
 
 @Component
 public class UserService implements IUserService {
-    static Map<Long, User> users = new HashMap<>();
+    private final Map<Long, User> users = new HashMap<>();
 
-    static {
-        User sam = new User(1L, "sam", "asdfasdf");
+    private final HashingService hashingService;
+
+    @Autowired
+    public UserService(final HashingService hashingService) {
+        this.hashingService = hashingService;
+
+        User sam = new User(1L, "sam", this.hashingService.hashIt("asdfasdf"));
         users.put(sam.getId(), sam);
     }
 
@@ -30,7 +37,7 @@ public class UserService implements IUserService {
             public boolean apply(@Nullable Map.Entry<Long, User> longUserEntry) {
                 User u = longUserEntry.getValue();
                 return u.getUsername().compareToIgnoreCase(username) == 0
-                        && u.getHashedPassword().equals(password);
+                        && hashingService.areEqual(password, u.getHashedPassword());
             }
         });
 

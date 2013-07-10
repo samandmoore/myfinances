@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Table(name = "users")
 public class User {
 
-    public User(Long id, String username, String password) {
+    User(Long id, String username, String password) {
         this.id = id;
         this.username = username;
         this.hashedPassword = password;
