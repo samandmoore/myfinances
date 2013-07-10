@@ -1,0 +1,14 @@
+footer {
+  margin: 0 0 3em 0;
+}
+
+footer .copy {
+  text-align: center;
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 1em;
+}
+
+footer .copy, footer .copy a {
+  color: #8e8e8e;
+}
