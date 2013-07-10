@@ -14,15 +14,18 @@
         <link href="/public/css/main.css" rel="stylesheet" />
     </head>
     <body>
-        <header id="header">
+
+        <div id="wrap">
             <jsp:invoke fragment="header"/>
-        </header>
 
-        <div id="body" class="container">
-            <jsp:doBody/>
+            <div id="body" class="container">
+                <jsp:doBody/>
+            </div>
+
+            <jsp:invoke fragment="footer"/>
+
+            <div id="push"></div>
         </div>
-
-        <jsp:invoke fragment="footer"/>
 
         <footer id="footer">
             <p class="copy">All Content &copy; ${now.getYear().toString()} Sam Moore</p>
