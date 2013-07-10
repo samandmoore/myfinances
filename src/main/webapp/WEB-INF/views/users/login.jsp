@@ -11,14 +11,26 @@
     </jsp:attribute>
 
     <jsp:body>
-        <form action="/users/login" method="POST">
-            <label>Email</label>
-            <input type="text" name="username" />
+        <form action="/users/login" method="POST" class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" for="username">Email / Username</label>
+                <div class="controls">
+                    <input type="text" name="username" placeholder="Email / Username">
+                </div>
+            </div>
 
-            <label>Password</label>
-            <input type="password" name="password" />
+            <div class="control-group">
+                <label class="control-label" for="password">Password</label>
+                <div class="controls">
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+            </div>
 
-            <button type="submit">Sign In</button>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn">Sign in</button>
+                </div>
+            </div>
         </form>
     </jsp:body>
 
