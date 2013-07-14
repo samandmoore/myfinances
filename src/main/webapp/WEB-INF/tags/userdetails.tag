@@ -1,4 +1,4 @@
-<%@tag description="Uesr details template" pageEncoding="UTF-8"%>
+<%@tag description="User details template" pageEncoding="UTF-8"%>
 <%@tag import="com.myfinances.users.User" %>
 <%@attribute name="user" required="false" type="com.myfinances.home.viewmodels.HomeViewModel.UserDetailsViewModel"%>
 

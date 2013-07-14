@@ -7,7 +7,7 @@
 <t:layout>
 
     <jsp:attribute name="header">
-        <h1>Welcome</h1>
+        <t:navbar/>
     </jsp:attribute>
 
     <jsp:body>
