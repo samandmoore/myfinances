@@ -13,5 +13,5 @@ public interface IAccountService {
 
     Iterable<Account> getByUserId(final Long userId);
 
-    Account create(final Long creatorUserId, final String name, final Iterable<Long> usersWithAccess);
+    Account create(final Long creatorUserId, final String name, final Long... usersWithAccess);
 }

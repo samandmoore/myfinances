@@ -19,8 +19,11 @@
             <option>GET</option>
             <option>POST</option>
         </select>
+
         <input type="text" id="url" />
-        <textarea id="body"></textarea>
+
+        <textarea id="requestData"></textarea>
+
         <button id="submit">submit</button>
 
         <div id="results"></div>

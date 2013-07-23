@@ -29,6 +29,7 @@ public class AccountService implements IAccountService {
         accounts.add(getFakeAccount(6L, 1L));
     }
 
+    private static Long counter = 9L;
     private static Account getFakeAccount(final Long id, final Long userId, final Long... accessors) {
         Account a = new Account();
         a.setId(id);
@@ -60,7 +61,12 @@ public class AccountService implements IAccountService {
     }
 
     @Override
-    public Account create(Long creatorUserId, String name, Iterable<Long> usersWithAccess) {
-        return new Account();
+    public Account create(Long creatorUserId, String name, Long... usersWithAccess) {
+        Account a = getFakeAccount(++counter, creatorUserId);
+        a.setName(name);
+
+        accounts.add(a);
+
+        return a;
     }
 }

@@ -38,7 +38,7 @@
                     e.preventDefault();
 
                     var url = $('#url').val(),
-                        body = $('#body').val() || null,
+                        requestData = $('#requestData').val(),
                         method = $('#method').val(),
                         $resultArea = $('#results'),
                         options = {};
@@ -47,8 +47,9 @@
                     options.contentType = 'application/json; charset=UTF-8';
                     options.method = method;
 
-                    if (body) {
-                        options.body = body;
+                    if (requestData) {
+                        options.data = requestData;
+                        options.dataType = 'json';
                     }
 
                     var request = $.ajax(options);
