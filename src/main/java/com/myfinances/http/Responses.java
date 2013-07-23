@@ -13,6 +13,16 @@ import java.util.Map;
 /**
  * Helper class for generating typed http responses with optional errors instead of body
  *
+ * TODO: refactor this into a builder pattern where the builder can decide that a special
+ * error model should be used in the unsuccessful case. that will make it look something like
+ * public HttpResponse createItem(final ItemInput input) {
+ *     Item item = itemService.create(...);
+ *     return Responses.for(item)
+ *              .hasErrors(listOfErrors)
+ *              .statusCode(HttpStatus.CONFLICTED)
+ *              .create();
+ * }
+ *
  * @author sam
  * @since 7/22/13 11:31 PM
  */
