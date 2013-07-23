@@ -14,6 +14,16 @@
         <t:userdetails user="${model.userDetails}"/>
 
         <p>single page app goes here!</p>
+
+        <select id="method">
+            <option>GET</option>
+            <option>POST</option>
+        </select>
+        <input type="text" id="url" />
+        <textarea id="body"></textarea>
+        <button id="submit">submit</button>
+
+        <div id="results"></div>
     </jsp:body>
 
 </t:layout>
