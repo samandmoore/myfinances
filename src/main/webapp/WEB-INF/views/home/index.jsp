@@ -11,14 +11,19 @@
     </jsp:attribute>
 
     <jsp:attribute name="bodyScripts">
-        <-- libs -->
+        <-- ext libs -->
         <script type="text/javascript" src="/public/js/json2.js"></script>
         <script type="text/javascript" src="/public/js/underscore-min.js"></script>
         <script type="text/javascript" src="/public/js/backbone-min.js"></script>
-        <--/ libs -->
+        <--/ ext libs -->
 
+        <!-- local libs -->
         <script type="text/javascript" src="/public/js/application/lib/form.js"></script>
+        <!--/ local libs -->
+
+        <!-- models -->
         <script type="text/javascript" src="/public/js/application/models/account.js"></script>
+        <!--/ models -->
 
         <!-- views -->
         <script type="text/javascript" src="/public/js/application/views/helpers.js"></script>
