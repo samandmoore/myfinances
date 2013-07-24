@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO: documentation
+ * an http response wrapper for error results
  *
- * @author sam
+ * @author Sam Moore
  * @since 7/23/13 9:36 PM
  */
 public class ErrorModel {
