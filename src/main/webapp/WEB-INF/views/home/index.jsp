@@ -37,7 +37,7 @@
             app = Application;
             app.clientUrlPrefix = '/';
             app.serverUrlPrefix = ''; /* '/api/'; */
-            jQuery(function() {
+            (function() {
               app.start({
                 userSignnedIn: true,
                 accounts: []
