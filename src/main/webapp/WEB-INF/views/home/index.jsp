@@ -22,6 +22,7 @@
         <!--/ local libs -->
 
         <!-- models -->
+        <script type="text/javascript" src="/public/js/application/models/validation-mixin.js"></script>
         <script type="text/javascript" src="/public/js/application/models/account.js"></script>
         <!--/ models -->
 
