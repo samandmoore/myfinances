@@ -2,6 +2,7 @@ package com.myfinances.accounts;
 
 import com.google.common.collect.Lists;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ import java.util.List;
 public class Account {
     private Long id;
     private String name;
+    private BigDecimal balance;
 
     // relationships
     private Long createdByUserId;
@@ -52,5 +54,13 @@ public class Account {
 
     public void setMemberUserIds(List<Long> memberUserIds) {
         this.memberUserIds = memberUserIds;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
     }
 }

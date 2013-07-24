@@ -32,15 +32,7 @@ var Application;
             return response.errors ?
                 response.errors :
                 void(0);
-        },
-
-//        subscribeModelInvalidEvent: function(model, el) {
-//            model.once('invalid', function() {
-//                el.showFieldErrors({
-//                    errors: model.validationError
-//                });
-//            });
-//        }
+        }
     };
 
 })(jQuery, _, Application || (Application = {}));
