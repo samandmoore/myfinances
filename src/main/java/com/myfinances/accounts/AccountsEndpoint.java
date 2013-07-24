@@ -31,23 +31,23 @@ public class AccountsEndpoint {
     @ResponseBody
     public ResponseEntity<Account> getAccount(@PathVariable Long accountId) {
         Account account = accountService.getById(accountId);
-        return Responses.createResponse(account);
+        return Responses.createResponse(HttpStatus.OK, account);
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<Account> createAccount(@RequestBody final AccountCreateRequest request) {
+    public ResponseEntity createAccount(@RequestBody final AccountCreateRequest request) {
         Account account = accountService.create(1L, request.getName());
 
-        return Responses.createResponse(account, HttpStatus.CREATED);
+        return Responses.createResponse(HttpStatus.CREATED, account);
     }
 
     @RequestMapping(value = "/errors", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<Account> createErrors(@RequestBody final AccountCreateRequest request) {
+    public ResponseEntity createErrors(@RequestBody final AccountCreateRequest request) {
         Account account = null;
         Map<String, List<String>> errors = Maps.newHashMap();
         errors.put("name", Arrays.asList("too short", "bad choice", "i don't like it"));
-        return Responses.createResponse(account, errors);
+        return Responses.createErrorResponse(HttpStatus.CONFLICT, errors);
     }
 }

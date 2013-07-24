@@ -29,32 +29,19 @@ import java.util.Map;
 public class Responses {
     private Responses() {}
 
-    public static <T> ResponseEntity<T> createResponse(T item) {
-        return createResponse(item, Optional.<HttpStatus>absent(), new HashMap<String, List<String>>());
+    public static <T> ResponseEntity<T> createResponse(HttpStatus httpStatus, T item) {
+        return createResponse(item, Optional.fromNullable(httpStatus));
     }
 
-    public static <T> ResponseEntity<T> createResponse(T item, HttpStatus httpStatus) {
-        return createResponse(item, Optional.fromNullable(httpStatus), new HashMap<String, List<String>>());
+    private static <T> ResponseEntity<T> createResponse(T item, Optional<HttpStatus> httpStatusOptional) {
+        return new ResponseEntity<>(item, httpStatusOptional.or(HttpStatus.OK));
     }
 
-    public static <T> ResponseEntity<T> createResponse(T item, Map<String, List<String>> errors) {
-        return createResponse(item, Optional.<HttpStatus>absent(), errors);
+    public static ResponseEntity createErrorResponse(HttpStatus httpStatus, Map<String, List<String>> errors) {
+        return createErrorResponse(errors, Optional.fromNullable(httpStatus));
     }
 
-    public static <T> ResponseEntity<T> createResponse(T item, HttpStatus httpStatus, Map<String, List<String>> errors) {
-        return createResponse(item, Optional.fromNullable(httpStatus), errors);
-    }
-
-    private static <T> ResponseEntity<T> createResponse(T item, Optional<HttpStatus> httpStatusOptional, Map<String, List<String>> errors) {
-        if (!errors.isEmpty()) {
-            MultiValueMap<String, String> errorMap = new LinkedMultiValueMap<>(errors);
-            return new ResponseEntity<T>(item, errorMap, httpStatusOptional.or(HttpStatus.CONFLICT));
-        }
-
-        if (item == null) {
-            return new ResponseEntity<T>(item, HttpStatus.NOT_FOUND);
-        }
-
-        return new ResponseEntity<T>(item, httpStatusOptional.or(HttpStatus.OK));
+    private static ResponseEntity createErrorResponse(Map<String, List<String>> errors, Optional<HttpStatus> httpStatus) {
+        return new ResponseEntity<>(new ErrorModel(httpStatus.or(HttpStatus.CONFLICT), errors), httpStatus.or(HttpStatus.CONFLICT));
     }
 }
