@@ -11,12 +11,37 @@
     </jsp:attribute>
 
     <jsp:attribute name="bodyScripts">
+        <-- libs -->
         <script type="text/javascript" src="/public/js/json2.js"></script>
         <script type="text/javascript" src="/public/js/underscore-min.js"></script>
         <script type="text/javascript" src="/public/js/backbone-min.js"></script>
+        <--/ libs -->
+
+        <script type="text/javascript" src="/public/js/application/lib/form.js"></script>
+        <script type="text/javascript" src="/public/js/application/models/account.js"></script>
+
+        <!-- views -->
+        <script type="text/javascript" src="/public/js/application/views/helpers.js"></script>
+        <!--/ views -->
+
+        <!-- app -->
         <script type="text/javascript" src="/public/js/application/context.js"></script>
         <script type="text/javascript" src="/public/js/application/router.js"></script>
         <script type="text/javascript" src="/public/js/application/application.js"></script>
+        <script type="text/javascript">
+            app = Application;
+            app.clientUrlPrefix = '/';
+            app.serverUrlPrefix = ''; /* '/api/'; */
+            jQuery(function() {
+              app.start({
+                userSignnedIn: true,
+                accounts: []
+              });
+            });
+        </script>
+        <!--/ app -->
+
+        <!-- other -->
         <script type="text/javascript">
             (function () {
                 $('#submit').on('click', function (e) {
@@ -56,17 +81,7 @@
                 });
             }());
         </script>
-        <script type="text/javascript">
-            app = Application;
-            app.clientUrlPrefix = '/';
-            app.serverUrlPrefix = '/api/';
-            jQuery(function() {
-              app.start({
-                userSignnedIn: true,
-                accounts: []
-              });
-            });
-        </script>
+        <!--/ other -->
     </jsp:attribute>
 
     <jsp:body>
