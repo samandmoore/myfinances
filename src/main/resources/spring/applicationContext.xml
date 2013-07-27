@@ -27,8 +27,8 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**" />
-            <mvc:exclude-mapping path="/users/login" />
-            <mvc:exclude-mapping path="/users/login/" />
+            <mvc:exclude-mapping path="/sessions/login" />
+            <mvc:exclude-mapping path="/sessions/login/" />
             <mvc:exclude-mapping path="/public/**" />
             <bean class="com.myfinances.auth.AuthInterceptor" autowire="constructor" />
         </mvc:interceptor>

@@ -41,7 +41,7 @@
           }
         </style>
 
-        <form action="/users/login" method="POST" class="form-signin">
+        <form action="/sessions/login" method="POST" class="form-signin">
 
             <spring:hasBindErrors name="">
                 <ul>

@@ -19,14 +19,14 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if (request.getRequestURI().startsWith("/users/login")) {
+        if (request.getRequestURI().startsWith(AuthConstants.LOGIN_URL)) {
             return true;
         }
 
         boolean result = preHandleInternal(request, response);
 
         if (result == false) {
-            response.sendRedirect("/users/login");
+            response.sendRedirect(AuthConstants.LOGIN_URL);
         }
 
         return result;

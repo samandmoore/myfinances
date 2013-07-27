@@ -1,7 +1,9 @@
-package com.myfinances.users;
+package com.myfinances.sessions;
 
 import com.myfinances.auth.IAuthService;
-import com.myfinances.users.inputs.LoginInput;
+import com.myfinances.users.IUserService;
+import com.myfinances.users.User;
+import com.myfinances.sessions.inputs.LoginInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -16,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Controller
-@RequestMapping(value = "/users")
-public class UsersController {
+@RequestMapping(value = "/sessions")
+public class SessionsController {
 
     @Autowired
     private IUserService userService;
@@ -27,7 +29,7 @@ public class UsersController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login() {
-        return new ModelAndView("users/login");
+        return new ModelAndView("sessions/login");
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -36,7 +38,7 @@ public class UsersController {
 
         if (result.hasErrors()) {
             // TODO: show these errors in the view...
-            return new ModelAndView("users/login", "", input);
+            return new ModelAndView("session/login", "", input);
         }
 
         User user = userService.findByUsernameAndPassword(input.getUsername(), input.getPassword());
@@ -49,7 +51,7 @@ public class UsersController {
 
         result.addError(new ObjectError("", "Username/Password invalid."));
 
-        return new ModelAndView("users/login", "", input);
+        return new ModelAndView("sessions/login", "", input);
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)

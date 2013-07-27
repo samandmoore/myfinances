@@ -5,8 +5,11 @@ var Application;
     Application.Context = (function() {
 
         function Context(options) {
+            this.accounts = new Application.Models.Accounts();
+            this.user = new Application.Models.User();
+
             if (options.userSignnedIn) {
-                this.userSignedIn({ load: false });
+                this.userSignedIn({ load: true });
             }
         }
 
@@ -21,12 +24,18 @@ var Application;
                 this.signedIn = true;
 
                 if (options.load) {
+                    // fetch user details
+                    this.user.fetch({ reset: true });
+
                     // fetch accounts
+                    this.accounts.fetch({ reset: true });
                 }
             },
 
             userSignedOut: function() {
                 this.signedIn = false;
+                this.user = new User();
+                this.accounts.reset();
              }
         };
 

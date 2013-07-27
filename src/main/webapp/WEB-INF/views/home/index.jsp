@@ -24,6 +24,7 @@
         <!-- models -->
         <script type="text/javascript" src="/public/js/application/models/validation-mixin.js"></script>
         <script type="text/javascript" src="/public/js/application/models/account.js"></script>
+        <script type="text/javascript" src="/public/js/application/models/user.js"></script>
         <!--/ models -->
 
         <!-- views -->
@@ -40,10 +41,9 @@
             app.serverUrlPrefix = ''; /* '/api/'; */
             (function() {
               app.start({
-                userSignnedIn: true,
-                accounts: []
+                userSignnedIn: true
               });
-            });
+            }());
         </script>
         <!--/ app -->
 
