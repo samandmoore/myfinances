@@ -11,11 +11,11 @@
     </jsp:attribute>
 
     <jsp:attribute name="bodyScripts">
-        <-- ext libs -->
+        <!-- ext libs -->
         <script type="text/javascript" src="/public/js/json2.js"></script>
         <script type="text/javascript" src="/public/js/underscore-min.js"></script>
         <script type="text/javascript" src="/public/js/backbone-min.js"></script>
-        <--/ ext libs -->
+        <!--/ ext libs -->
 
         <!-- local libs -->
         <script type="text/javascript" src="/public/js/application/lib/form.js"></script>
