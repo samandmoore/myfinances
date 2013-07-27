@@ -19,16 +19,26 @@ var Application;
             },
 
             userSignedIn: function (options) {
+                var self = this;
                 options || (options = { load: true });
 
-                this.signedIn = true;
+                self.signedIn = true;
 
                 if (options.load) {
                     // fetch user details
-                    this.user.fetch({ reset: true });
+                    var userResult = self.user.fetch({ reset: true });
 
-                    // fetch accounts
-                    this.accounts.fetch({ reset: true });
+                    userResult.done(function (model) {
+                        var currentUserId = self.user.get('id');
+
+                        // fetch accounts
+                        self.accounts.fetch({
+                            reset: true,
+                            data: {
+                                forUserId: currentUserId
+                            }
+                        });
+                    });
                 }
             },
 

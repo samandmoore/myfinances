@@ -1,7 +1,9 @@
 package com.myfinances.accounts;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.myfinances.accounts.inputs.AccountCreateRequest;
+import com.myfinances.accounts.inputs.AccountFetchRequest;
 import com.myfinances.http.Responses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,9 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * TODO: documentation
@@ -26,6 +26,22 @@ public class AccountsEndpoint {
 
     @Autowired
     private IAccountService accountService;
+
+    @RequestMapping(method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity getAccounts(@ModelAttribute final AccountFetchRequest request) {
+
+        if (request.getForUserId() != null) {
+            Long userId = request.getForUserId();
+            List<Account> accountsForUser = Lists.newArrayList(accountService.getByUserId(userId));
+            return Responses.createResponse(HttpStatus.OK, accountsForUser);
+        }
+
+        Map<String, List<String>> errors = new HashMap<>();
+        List<String> specificErrors = Lists.newArrayList("You must provide a user to get accounts.");
+        errors.put("request", specificErrors);
+        return Responses.createErrorResponse(HttpStatus.BAD_REQUEST, errors);
+    }
 
     @RequestMapping(value = "/{accountId}", method = RequestMethod.GET)
     @ResponseBody
