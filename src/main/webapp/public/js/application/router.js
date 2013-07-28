@@ -30,12 +30,14 @@ var Application;
                     return;
                 }
                 // deactivate the current view
+                this.currentView.deactivate();
             }
 
             // set up the active menu item...
 
             this.currentView = view;
             // activate the current view
+            Application.mainContent.show(view);
         }
     });
 

@@ -15,11 +15,16 @@
         <script type="text/javascript" src="/public/js/json2.js"></script>
         <script type="text/javascript" src="/public/js/underscore-min.js"></script>
         <script type="text/javascript" src="/public/js/backbone-min.js"></script>
+        <script type="text/javascript" src="/public/js/backbone.marionette.min.js"></script>
         <!--/ ext libs -->
 
         <!-- local libs -->
         <script type="text/javascript" src="/public/js/application/lib/form.js"></script>
         <!--/ local libs -->
+
+        <!-- bootstrapper -->
+        <script type="text/javascript" src="/public/js/application/main.js"></script>
+        <!--/ bootstrapper -->
 
         <!-- models -->
         <script type="text/javascript" src="/public/js/application/models/validation-mixin.js"></script>
@@ -39,74 +44,38 @@
             app = Application;
             app.clientUrlPrefix = '/';
             app.serverUrlPrefix = ''; /* '/api/'; */
-            (function() {
+            jQuery(function() {
               app.start({
                 userSignnedIn: true
               });
-            }());
+            });
         </script>
         <!--/ app -->
-
-        <!-- other -->
-        <script type="text/javascript">
-            (function () {
-                $('#submit').on('click', function (e) {
-                    e.preventDefault();
-
-                    var url = $('#url').val(),
-                        requestData = $('#requestData').val(),
-                        method = $('#method').val(),
-                        $resultArea = $('#results'),
-                        options = {};
-
-                    options.url = url;
-                    options.contentType = 'application/json; charset=UTF-8';
-                    options.method = method;
-
-                    if (requestData) {
-                        options.data = requestData;
-                        options.dataType = 'json';
-                    }
-
-                    var request = $.ajax(options);
-
-                    request.done(function (data) {
-                        $resultArea.text(JSON.stringify(data, undefined, 2));
-                    });
-
-                    request.fail(function (xhr, textStatus, errorThrown) {
-                        var result = 'Response: ' + xhr.status + ' ' + textStatus + ' ... ' + errorThrown;
-
-                        if (xhr.responseJSON) {
-                            result += '<br />';
-                            result += JSON.stringify(xhr.responseJSON, undefined, 2);
-                        }
-
-                        $resultArea.html(result);
-                    });
-                });
-            }());
-        </script>
-        <!--/ other -->
     </jsp:attribute>
 
     <jsp:body>
         <t:userdetails user="${model.userDetails}"/>
 
-        <p>single page app goes here!</p>
+        <header>
+            <div class="header-wrapper">
+                <a href="#summary" class="logo"></a>
+                <div id="userLinks"></div>
+            </div>
+        </header>
 
-        <select id="method">
-            <option>GET</option>
-            <option>POST</option>
-        </select>
+        <nav id="navBar">
 
-        <input type="text" id="url" />
+        </nav>
 
-        <textarea id="requestData"></textarea>
-
-        <button id="submit">submit</button>
-
-        <pre><code id="results"></code></pre>
+        <div>
+            <div id="flash">
+            </div>
+            <section id="mainContent">
+                <div>
+                    <div class="barber-pole"></div>
+                </div>
+            </section>
+        </div>
     </jsp:body>
 
 </t:layout>
