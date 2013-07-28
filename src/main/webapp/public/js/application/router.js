@@ -4,7 +4,8 @@ var Application;
 
     Application.Router = Backbone.Router.extend({
         routes: {
-            '!/': 'home',
+            '': 'home',
+            '/accounts': 'accounts',
             '*path': 'notFound'
         },
 
@@ -13,11 +14,21 @@ var Application;
         },
 
         home: function() {
-            this.activate(this.homeView, 'home');
+            this.activate(new Application.Views.Home(), 'home');
+        },
+
+        accounts: function () {
+            this.activate(
+                new Application.Views.AccountList({
+                    collection: this.context.accounts,
+                    router: this
+                }),
+                'accounts'
+            );
         },
 
         notFound: function() {
-            this.activate(this.notFoundView);
+            this.activate(new Application.Views.NotFound());
         },
 
         /**
@@ -30,14 +41,15 @@ var Application;
                     return;
                 }
                 // deactivate the current view
-                this.currentView.deactivate();
+                // this.currentView.deactivate();
             }
 
             // set up the active menu item...
 
             this.currentView = view;
             // activate the current view
-            Application.mainContent.show(view);
+            //Application.mainContent.show(view);
+            Application.navBar.show(new Application.Views.NavBar({ currentPage: menu }));
         }
     });
 

@@ -30,6 +30,16 @@ var Application;
         return Application.clientUrlPrefix + path;
     }
 
+    function configureHashUrls() {
+        $(document).on('click', 'a', function (e) {
+            var href = $(this).attr('href');
+
+            e && e.preventDefault();
+
+            Application.router.navigate(href.substring(1), true);
+        });
+    }
+
     Application.addInitializer(function(options) {
         Application.addRegions({
             userLinks: '#userLinks', // top right - user's name, profile, logout
@@ -41,21 +51,31 @@ var Application;
     /**
     * override the marionette template loader
     */
-    Marionette.TemplateCache.prototype.loadTemplate = function (templateId, callback) {
+    Marionette.TemplateCache.prototype.loadTemplate = function (templateId) {
+        var self = this,
+            url = null,
+            promise = null,
+            result = null;
+
         if (templateId) {
+
             templateId = templateId.replace("#", "");
-            var url = "/public/templates/" + templateId + ".html?" + new Date().getTime();
-            var promise = $.ajax(url);
+
+            url = "/public/templates/" + templateId + ".html?" + new Date().getTime();
+            promise = $.ajax({
+                url: url,
+                async: false
+            });
+
             promise.done(function(templateHtml) {
                 var $template = $(templateHtml);
-                var template = that.compileTemplate($template.html());
-                callback(template);
+                result = $template.html();
             });
         } else {
-            callback(function() {
-                return '';
-            });
+            result = '';
         }
+
+        return result;
     }
 
     Application.on('start', function onStart(options) {
@@ -65,7 +85,9 @@ var Application;
             context: Application.context
         });
 
-        Backbone.history.start();
+        configureHashUrls();
+
+        Backbone.history.start({ pushState: true });
 
         if (!hasClientUrl()) {
             redirectToDefault();

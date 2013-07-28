@@ -7,13 +7,29 @@
 <t:layout>
 
     <jsp:attribute name="header">
-        <t:navbar/>
+        <!-- <header>
+            <div class="header-wrapper">
+                <a href="#summary" class="logo"></a>
+                <div id="userLinks"></div>
+            </div>
+        </header> -->
+
+        <div class="container">
+
+            <div class="masthead">
+                <h3 class="muted">My Finances</h3>
+
+                <nav id="navBar">
+                </nav>
+            </div>
+
+        </div>
     </jsp:attribute>
 
     <jsp:attribute name="bodyScripts">
         <!-- ext libs -->
         <script type="text/javascript" src="/public/js/json2.js"></script>
-        <script type="text/javascript" src="/public/js/underscore-min.js"></script>
+        <script type="text/javascript" src="/public/js/underscore.js"></script>
         <script type="text/javascript" src="/public/js/backbone-min.js"></script>
         <script type="text/javascript" src="/public/js/backbone.marionette.min.js"></script>
         <!--/ ext libs -->
@@ -30,10 +46,13 @@
         <script type="text/javascript" src="/public/js/application/models/validation-mixin.js"></script>
         <script type="text/javascript" src="/public/js/application/models/account.js"></script>
         <script type="text/javascript" src="/public/js/application/models/user.js"></script>
+        <script type="text/javascript" src="/public/js/application/models/navBar.js"></script>
         <!--/ models -->
 
         <!-- views -->
         <script type="text/javascript" src="/public/js/application/views/helpers.js"></script>
+        <script type="text/javascript" src="/public/js/application/views/navBar.js"></script>
+        <script type="text/javascript" src="/public/js/application/views/home.js"></script>
         <!--/ views -->
 
         <!-- app -->
@@ -55,17 +74,6 @@
 
     <jsp:body>
         <t:userdetails user="${model.userDetails}"/>
-
-        <header>
-            <div class="header-wrapper">
-                <a href="#summary" class="logo"></a>
-                <div id="userLinks"></div>
-            </div>
-        </header>
-
-        <nav id="navBar">
-
-        </nav>
 
         <div>
             <div id="flash">

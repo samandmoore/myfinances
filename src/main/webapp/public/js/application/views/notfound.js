@@ -7,6 +7,4 @@ var Application;
         el: '#not-found-page'
     });
 
-    _.extend(Views.NotFound.prototype, Views.Activable);
-
 })(_, Backbone, Application || (Application = {}));
