@@ -31,12 +31,25 @@ var Application;
     }
 
     function configureHashUrls() {
-        $(document).on('click', 'a', function (e) {
-            var href = $(this).attr('href');
+        $(document).on('click', 'a[href^="/"]', function (event) {
 
-            e && e.preventDefault();
+            var href = $(event.currentTarget).attr('href');
 
-            Application.router.navigate(href.substring(1), true);
+            // chain 'or's for other black list routes
+            var passThrough = href.indexOf('logout') >= 0;
+
+            // Allow shift+click for new tabs, etc.
+            if (!passThrough && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
+                event.preventDefault();
+            }
+
+            // Remove leading slashes and hash bangs (backward compatablility)
+            url = href.replace(/^\//,'').replace('\#\!\/','');
+
+            // Instruct Backbone to trigger routing events
+            Application.router.navigate(url, { trigger: true });
+
+            return false
         });
     }
 

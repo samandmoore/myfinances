@@ -46,13 +46,13 @@
         <script type="text/javascript" src="/public/js/application/models/validation-mixin.js"></script>
         <script type="text/javascript" src="/public/js/application/models/account.js"></script>
         <script type="text/javascript" src="/public/js/application/models/user.js"></script>
-        <script type="text/javascript" src="/public/js/application/models/navBar.js"></script>
         <!--/ models -->
 
         <!-- views -->
         <script type="text/javascript" src="/public/js/application/views/helpers.js"></script>
         <script type="text/javascript" src="/public/js/application/views/navBar.js"></script>
         <script type="text/javascript" src="/public/js/application/views/home.js"></script>
+        <script type="text/javascript" src="/public/js/application/views/accountList.js"></script>
         <!--/ views -->
 
         <!-- app -->

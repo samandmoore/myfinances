@@ -5,19 +5,22 @@ var Application;
     Application.Router = Backbone.Router.extend({
         routes: {
             '': 'home',
-            '/accounts': 'accounts',
-            '*path': 'notFound'
+            'accounts': 'accounts'
         },
 
         initialize: function (options) {
             this.context = options.context;
+
+            this.navBar = new Application.Views.NavBar();
         },
 
         home: function() {
+            console.log('home')
             this.activate(new Application.Views.Home(), 'home');
         },
 
         accounts: function () {
+            console.log('accounts');
             this.activate(
                 new Application.Views.AccountList({
                     collection: this.context.accounts,
@@ -27,15 +30,11 @@ var Application;
             );
         },
 
-        notFound: function() {
-            this.activate(new Application.Views.NotFound());
-        },
-
         /**
         * @param view - the view object to activate
         * @param menu - an optional menu item name to set as active
         */
-        activate: function (view, menu) {
+        activate: function (view, currentPage) {
             if (this.currentView) {
                 if (this.currentView === view) {
                     return;
@@ -45,11 +44,12 @@ var Application;
             }
 
             // set up the active menu item...
+            Application.navBar.show(this.navBar);
+            this.navBar.select(currentPage);
 
             this.currentView = view;
             // activate the current view
             //Application.mainContent.show(view);
-            Application.navBar.show(new Application.Views.NavBar({ currentPage: menu }));
         }
     });
 
