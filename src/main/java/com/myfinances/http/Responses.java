@@ -1,6 +1,7 @@
 package com.myfinances.http;
 
 import com.google.common.base.Optional;
+import com.myfinances.common.ModelState;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
@@ -35,6 +36,10 @@ public class Responses {
 
     private static <T> ResponseEntity<T> createResponse(T item, Optional<HttpStatus> httpStatusOptional) {
         return new ResponseEntity<>(item, httpStatusOptional.or(HttpStatus.OK));
+    }
+
+    public static ResponseEntity createErrorResponse(HttpStatus httpStatus, ModelState modelState) {
+        return createErrorResponse(httpStatus, modelState.asMap());
     }
 
     public static ResponseEntity createErrorResponse(HttpStatus httpStatus, Map<String, List<String>> errors) {

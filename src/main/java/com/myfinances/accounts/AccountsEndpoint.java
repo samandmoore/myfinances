@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.myfinances.accounts.inputs.AccountCreateRequest;
 import com.myfinances.accounts.inputs.AccountFetchRequest;
+import com.myfinances.common.ModelState;
 import com.myfinances.http.Responses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,10 +38,10 @@ public class AccountsEndpoint {
             return Responses.createResponse(HttpStatus.OK, accountsForUser);
         }
 
-        Map<String, List<String>> errors = new HashMap<>();
-        List<String> specificErrors = Lists.newArrayList("You must provide a user to get accounts.");
-        errors.put("request", specificErrors);
-        return Responses.createErrorResponse(HttpStatus.BAD_REQUEST, errors);
+        ModelState modelState = new ModelState();
+        modelState.add("request", "You must provide a user to get accounts.");
+
+        return Responses.createErrorResponse(HttpStatus.BAD_REQUEST, modelState);
     }
 
     @RequestMapping(value = "/{accountId}", method = RequestMethod.GET)
@@ -61,9 +62,9 @@ public class AccountsEndpoint {
     @RequestMapping(value = "/errors", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity createErrors(@RequestBody final AccountCreateRequest request) {
-        Account account = null;
-        Map<String, List<String>> errors = Maps.newHashMap();
-        errors.put("name", Arrays.asList("too short", "bad choice", "i don't like it"));
-        return Responses.createErrorResponse(HttpStatus.CONFLICT, errors);
+        ModelState modelState = new ModelState();
+        modelState.add("name", "too short", "bad choice", "i don't like it");
+
+        return Responses.createErrorResponse(HttpStatus.CONFLICT, modelState);
     }
 }
