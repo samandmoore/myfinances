@@ -22,7 +22,7 @@ public class ModelState {
         }
     };
 
-    private Map<String, List<String>> errors = new HashMap<>();
+    private final Map<String, List<String>> errors = new HashMap<>();
 
     public void add(String key, String... errorMessages) {
         List<String> specificErrors = errors.get(key);
@@ -31,9 +31,7 @@ public class ModelState {
             specificErrors = Lists.newArrayList();
         }
 
-        for (String e : errorMessages) {
-            specificErrors.add(e);
-        }
+        Collections.addAll(specificErrors, errorMessages);
 
         errors.put(key, specificErrors);
     }

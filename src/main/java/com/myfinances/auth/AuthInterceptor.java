@@ -25,7 +25,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
         boolean result = preHandleInternal(request, response);
 
-        if (result == false) {
+        if (!result) {
             response.sendRedirect(AuthConstants.LOGIN_URL);
         }
 

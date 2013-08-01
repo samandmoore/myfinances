@@ -31,7 +31,7 @@ public class AuthTicket {
     private AbstractInstant issuedAt;
     private AbstractInstant expiresAt;
 
-    public AuthTicket() {
+    private AuthTicket() {
     }
 
     public AuthTicket(int version, String userIdentifier, AbstractInstant issuedAt, AbstractInstant expiresAt) {
@@ -82,7 +82,7 @@ public class AuthTicket {
         List<String> finalParts = Lists.newArrayList(parts);
 
         AuthTicket ticket = new AuthTicket();
-        ticket.setVersion(Integer.valueOf(finalParts.get(0)).intValue());
+        ticket.setVersion(Integer.valueOf(finalParts.get(0)));
         ticket.setUserIdentifier(finalParts.get(1));
         ticket.setIssuedAt(new DateTime(Long.valueOf(finalParts.get(2)), DateTimeZone.UTC));
         ticket.setExpiresAt(new DateTime(Long.valueOf(finalParts.get(3)), DateTimeZone.UTC));

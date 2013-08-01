@@ -26,12 +26,6 @@ public class HomeController {
         return new ModelAndView("home/index", "model", viewModel);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView index(@RequestParam String name, HttpServletRequest request) {
-
-        return new ModelAndView("home/index", "model", getHomeViewModel(request));
-    }
-
     private HomeViewModel getHomeViewModel(HttpServletRequest request) {
         final HomeViewModel viewModel;
 

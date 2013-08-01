@@ -32,7 +32,7 @@ public class Responses {
         return createErrorResponse(httpStatus, modelState.asMap());
     }
 
-    public static ResponseEntity createErrorResponse(HttpStatus httpStatus, Map<String, List<String>> errors) {
+    private static ResponseEntity createErrorResponse(HttpStatus httpStatus, Map<String, List<String>> errors) {
         return createErrorResponse(errors, Optional.fromNullable(httpStatus));
     }
 

@@ -11,7 +11,7 @@ public class HomeViewModel {
         userDetails = new UserDetailsViewModel(user);
     }
 
-    private UserDetailsViewModel userDetails;
+    private final UserDetailsViewModel userDetails;
 
     public UserDetailsViewModel getUserDetails() {
         return userDetails;

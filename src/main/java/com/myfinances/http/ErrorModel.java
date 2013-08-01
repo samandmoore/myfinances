@@ -11,9 +11,9 @@ import java.util.Map;
  * @author Sam Moore
  * @since 7/23/13 9:36 PM
  */
-public class ErrorModel {
-    private HttpStatus httpStatus;
-    private Map<String, List<String>> errors;
+class ErrorModel {
+    private final HttpStatus httpStatus;
+    private final Map<String, List<String>> errors;
 
     public ErrorModel(HttpStatus httpStatus, Map<String, List<String>> errors) {
 
