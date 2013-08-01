@@ -14,7 +14,7 @@ import java.util.Map;
  * @author sam
  * @since 7/22/13 11:31 PM
  */
-public class Responses {
+public final class Responses {
     private Responses() {}
 
     public static <T> ResponseEntity<T> createResponse(HttpStatus httpStatus, T item) {

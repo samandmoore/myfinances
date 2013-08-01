@@ -6,7 +6,7 @@ package com.myfinances.auth;
  * @author sam
  * @since 7/27/13 4:17 PM
  */
-class AuthConstants {
+final class AuthConstants {
     private AuthConstants() {
         throw new IllegalAccessError();
     }

@@ -15,7 +15,7 @@ import java.util.List;
  * @author sam
  * @since 7/6/13 1:21 PM
  */
-public class AuthTicket {
+public final class AuthTicket {
 
     public static final int CURRENT_AUTH_VERSION = 1;
 

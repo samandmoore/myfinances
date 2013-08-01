@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sam Moore
  */
-class AuthHttpHelpers {
+final class AuthHttpHelpers {
     private AuthHttpHelpers() {
     }
 
