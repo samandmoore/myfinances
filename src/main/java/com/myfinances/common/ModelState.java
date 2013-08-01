@@ -15,6 +15,13 @@ import java.util.Map;
  */
 public class ModelState {
 
+    public static final ModelState EMPTY = new ModelState() {
+        @Override
+        public void add(String key, String... errorMessages) {
+            // noop
+        }
+    };
+
     private Map<String, List<String>> errors = new HashMap<>();
 
     public void add(String key, String... errorMessages) {

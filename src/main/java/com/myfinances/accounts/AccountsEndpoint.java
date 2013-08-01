@@ -1,7 +1,6 @@
 package com.myfinances.accounts;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.myfinances.accounts.inputs.AccountCreateRequest;
 import com.myfinances.accounts.inputs.AccountFetchRequest;
 import com.myfinances.common.ModelState;
@@ -13,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * TODO: documentation

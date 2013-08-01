@@ -1,6 +1,5 @@
 package com.myfinances.users;
 
-import com.google.common.collect.Maps;
 import com.myfinances.auth.IAuthService;
 import com.myfinances.http.Responses;
 import com.myfinances.users.outputs.UserOutput;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * TODO: documentation
@@ -36,7 +33,7 @@ public class UsersEndpoint {
         User user = authService.getCurrentUser(request);
 
         if (user == null) {
-            return Responses.createErrorResponse(HttpStatus.UNAUTHORIZED, new HashMap<String, List<String>>());
+            return Responses.createErrorResponse(HttpStatus.UNAUTHORIZED);
         }
 
         return Responses.createResponse(HttpStatus.OK, UserOutput.fromUser(user));
