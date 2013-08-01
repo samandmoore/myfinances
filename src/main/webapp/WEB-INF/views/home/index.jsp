@@ -5,19 +5,16 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
 <t:layout>
-
     <jsp:attribute name="header">
-        <!-- <header>
-            <div class="header-wrapper">
-                <a href="#summary" class="logo"></a>
-                <div id="userLinks"></div>
-            </div>
-        </header> -->
-
         <div class="container">
 
             <div class="masthead">
-                <h3 class="muted">My Finances</h3>
+                <div class="clearfix">
+                    <h3 class="muted pull-left">My Finances</h3>
+                    <div class="pull-right">
+                        <t:userdetails user="${model.userDetails}"/>
+                    </div>
+                </div>
 
                 <nav id="navBar">
                 </nav>
@@ -73,8 +70,6 @@
     </jsp:attribute>
 
     <jsp:body>
-        <t:userdetails user="${model.userDetails}"/>
-
         <div>
             <div id="flash">
             </div>
@@ -85,5 +80,4 @@
             </section>
         </div>
     </jsp:body>
-
 </t:layout>

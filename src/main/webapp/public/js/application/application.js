@@ -39,9 +39,11 @@ var Application;
             var passThrough = href.indexOf('logout') >= 0;
 
             // Allow shift+click for new tabs, etc.
-            if (!passThrough && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey) {
-                event.preventDefault();
+            if (passThrough || (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey)) {
+                return true;
             }
+
+            event.preventDefault();
 
             // Remove leading slashes and hash bangs (backward compatablility)
             url = href.replace(/^\//,'').replace('\#\!\/','');
@@ -100,7 +102,7 @@ var Application;
 
         configureHashUrls();
 
-        Backbone.history.start({ pushState: true });
+        Backbone.history.start({ pushState: false });
 
         if (!hasClientUrl()) {
             redirectToDefault();

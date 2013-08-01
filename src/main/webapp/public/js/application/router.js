@@ -49,7 +49,7 @@ var Application;
 
             this.currentView = view;
             // activate the current view
-            //Application.mainContent.show(view);
+            Application.mainContent.show(view);
         }
     });
 

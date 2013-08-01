@@ -39,3 +39,8 @@ footer .copy {
 footer .copy, footer .copy a {
     color: #8e8e8e;
 }
+
+.user-details {
+    margin-top: 20px;
+    margin-bottom: 0;
+}

@@ -2,9 +2,11 @@
 <%@tag import="com.myfinances.users.User" %>
 <%@attribute name="user" required="false" type="com.myfinances.home.viewmodels.HomeViewModel.UserDetailsViewModel"%>
 
+<p class="user-details">
 <% if (user != null) { %>
-    <p>${user.userName}</p>
-    <a href="/users/logout">logout</a>
+    welcome, ${user.userName}.
+    <a href="/sessions/logout">logout</a>
 <% } else { %>
     impossible!
 <% } %>
+</p>
