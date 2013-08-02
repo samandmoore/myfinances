@@ -17,7 +17,6 @@
         <jsp:invoke fragment="headScripts"/>
     </head>
     <body>
-
         <div id="wrap">
             <jsp:invoke fragment="header"/>
 

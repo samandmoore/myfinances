@@ -28,14 +28,12 @@
     </jsp:attribute>
 
     <jsp:body>
-        <div>
-            <div id="flash">
-            </div>
-            <section id="mainContent">
-                <div>
-                    <div class="barber-pole"></div>
-                </div>
-            </section>
+        <div id="flash">
         </div>
+        <section id="mainContent">
+            <div>
+                <div class="barber-pole"></div>
+            </div>
+        </section>
     </jsp:body>
 </t:layout>
