@@ -30,7 +30,8 @@ require(
     'underscore',
     'backbone',
     'marionette',
-    'application/application'
+    'application/application',
+    'json2'
 ],
 function($, _, Backbone, Marionette, Application) {
 
