@@ -1,9 +1,15 @@
-var Application;
+define(
+[
+    'jquery',
+    'underscore',
+    'backbone',
+    'marionette',
+    'application/models/validation',
+    'application/lib/constants'
+],
+function($, _, Backbone, Marionette, Validation, Constants) {
 
-(function (_, Backbone, Application) {
-    var Models = Application.Models || (Application.Models = {});
-
-    Models.Account = Backbone.Model.extend({
+    var Account = Backbone.Model.extend({
         defaults: function () {
             return {
                 name: null,
@@ -34,14 +40,18 @@ var Application;
         }
     });
 
-    Models.Accounts = Backbone.Collection.extend({
-        model: Models.Account,
+    var Accounts = Backbone.Collection.extend({
+        model: Account,
 
         url: function () {
-            return Application.serverUrlPrefix + '/accounts';
+            return Constants.serverUrlPrefix + '/accounts';
         }
     });
 
-     _.extend(Models.Account.prototype, Application.Models.Validation);
+     _.extend(Account.prototype, Validation);
 
-})(_, Backbone, Application || (Application = {}));
+     return {
+        Model: Account,
+        Collection: Accounts
+     };
+});

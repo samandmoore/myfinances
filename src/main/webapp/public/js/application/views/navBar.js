@@ -1,9 +1,13 @@
-var Application;
+define(
+[
+    'jquery',
+    'underscore',
+    'backbone',
+    'marionette'
+],
+function($, _, Backbone, Marionette) {
 
-(function(_, Backbone, Marionette, Application) {
-    var Views = Application.Views || (Application.Views = {});
-
-    Views.NavBar = Backbone.Marionette.ItemView.extend({
+    var NavBar = Marionette.ItemView.extend({
         template: '#navBar',
 
         onRender: function () {
@@ -19,4 +23,5 @@ var Application;
         },
     });
 
-})(_, Backbone, Marionette, Application || (Application = {}));
+    return NavBar;
+});

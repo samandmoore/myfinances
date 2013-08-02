@@ -1,21 +1,25 @@
-var Application;
+define(
+[
+    'jquery',
+    'underscore',
+    'backbone',
+    'marionette'
+],
+function($, _, Backbone, Marionette) {
 
-(function ($, _, Backbone, Application) {
-    var Views = Application.Views || (Application.Views = {});
-
-    Views.AccountListItem = Marionette.ItemView.extend({
+    var AccountListItem = Marionette.ItemView.extend({
         template: '#account-list-item',
         tagName: 'tr'
     });
 
-    Views.AccountList = Marionette.CompositeView.extend({
+    var AccountList = Marionette.CompositeView.extend({
         template: '#account-list',
 
-        itemView: Views.AccountListItem,
+        itemView: AccountListItem,
 
         itemViewContainer: 'tbody',
 
-        emptyView: Backbone.Marionette.ItemView.extend({
+        emptyView: Marionette.ItemView.extend({
                         tagName: 'tr',
                         template: "#account-list-empty"
                     }),
@@ -29,4 +33,5 @@ var Application;
         }
     });
 
-})(jQuery, _, Backbone, Application || (Application = {}));
+    return AccountList;
+});

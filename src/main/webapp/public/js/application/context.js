@@ -1,12 +1,19 @@
-var Application;
+define(
+[
+    'jquery',
+    'underscore',
+    'backbone',
+    'marionette',
+    'application/models/account',
+    'application/models/user'
+],
+function($, _, Backbone, Marionette, Account, User) {
 
-(function (Application) {
-
-    Application.Context = (function() {
+    var Context = (function() {
 
         function Context(options) {
-            this.accounts = new Application.Models.Accounts();
-            this.user = new Application.Models.User();
+            this.accounts = new Account.Collection();
+            this.user = new User.Model();
 
             if (options.userSignnedIn) {
                 this.userSignedIn({ load: true });
@@ -52,4 +59,5 @@ var Application;
         return Context;
     })();
 
-})(Application || (Application = {}));
+    return Context;
+});

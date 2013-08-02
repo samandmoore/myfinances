@@ -1,13 +1,20 @@
-var Application;
+define(
+[
+    'jquery',
+    'underscore',
+    'backbone',
+    'marionette',
+    'application/lib/constants'
+],
+function($, _, Backbone, Marionette, Constants) {
 
-(function (_, Backbone, Application) {
-    var Models = Application.Models || (Application.Models = {});
-
-    Models.User = Backbone.Model.extend({
+    var User = Backbone.Model.extend({
         urlRoot: function () {
-            return Application.serverUrlPrefix + "/users";
+            return Constants.serverUrlPrefix + "/users";
         }
     })
 
-
-}(_, Backbone, Application || (Application = {})));
+    return {
+        Model: User
+    };
+});

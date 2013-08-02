@@ -2,6 +2,7 @@
 <%@ attribute name="header" fragment="true" %>
 <%@ attribute name="footer" fragment="true" %>
 <%@ attribute name="bodyScripts" fragment="true" %>
+<%@ attribute name="headScripts" fragment="true" %>
 <%@ tag import="org.joda.time.DateTime" %>
 <% request.setAttribute("now", DateTime.now()); %>
 <!DOCTYPE html>
@@ -13,6 +14,7 @@
         <link href="/public/css/bootstrap.min.css" rel="stylesheet" />
         <link href="/public/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link href="/public/css/main.css" rel="stylesheet" />
+        <jsp:invoke fragment="headScripts"/>
     </head>
     <body>
 
@@ -32,7 +34,6 @@
             <p class="copy">All Content &copy; ${now.getYear().toString()} Sam Moore</p>
         </footer>
 
-        <script type="text/javascript" src="/public/js/jquery-2.0.3.min.js"></script>
         <jsp:invoke fragment="bodyScripts"/>
     </body>
 </html>

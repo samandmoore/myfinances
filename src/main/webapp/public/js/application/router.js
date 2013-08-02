@@ -1,8 +1,16 @@
-var Application;
+define(
+[
+    'jquery',
+    'underscore',
+    'backbone',
+    'marionette',
+    'application/views/navBar',
+    'application/views/home',
+    'application/views/accountList'
+],
+function($, _, Backbone, Marionette, NavBarView, HomeView, AccountListView) {
 
-(function($, _, Backbone, Application) {
-
-    Application.Router = Backbone.Router.extend({
+    var Router = Backbone.Router.extend({
         routes: {
             '': 'home',
             'accounts': 'accounts'
@@ -11,18 +19,18 @@ var Application;
         initialize: function (options) {
             this.context = options.context;
 
-            this.navBar = new Application.Views.NavBar();
+            this.navBar = new NavBarView();
         },
 
         home: function() {
             console.log('home')
-            this.activate(new Application.Views.Home(), 'home');
+            this.activate(new HomeView(), 'home');
         },
 
         accounts: function () {
             console.log('accounts');
             this.activate(
-                new Application.Views.AccountList({
+                new AccountListView({
                     collection: this.context.accounts,
                     router: this
                 }),
@@ -53,4 +61,5 @@ var Application;
         }
     });
 
-})(jQuery, _, Backbone, Application || (Application = {}));
+    return Router;
+});

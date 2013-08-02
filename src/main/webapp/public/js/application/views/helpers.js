@@ -1,9 +1,13 @@
-var Application;
+define(
+[
+    'jquery',
+    'underscore',
+    'backbone',
+    'marionette'
+],
+function($, _, Backbone, Marionette) {
 
-(function ($, _, Application) {
-    var Views = Application.Views || (Application.Views = {});
-
-    Views.Helpers = {
+    var Helpers = {
         hasModelErrors: function(jqxhr) {
             return jqxhr.status === 409;
         },
@@ -35,4 +39,6 @@ var Application;
         }
     };
 
-})(jQuery, _, Application || (Application = {}));
+    return Helpers;
+
+});

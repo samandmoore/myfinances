@@ -1,13 +1,17 @@
-var Application;
+define(
+[
+    'jquery',
+    'underscore',
+    'backbone'
+],
+function($, _, Backbone) {
 
-(function (Application) {
-    var Models = Application.Models || (Application.Models = {});
-
-    Models.Validation = {
+    var Validation = {
         errors: {},
         addError: function(attribute, message) {
             return (this.errors[attribute] || (this.errors[attribute] = [])).push(message);
         }
     };
 
-})(Application || (Application = {}));
+    return Validation;
+});

@@ -1,15 +1,25 @@
-var Application;
+define(
+[
+    'jquery',
+    'underscore',
+    'backbone',
+    'marionette',
+    'application/context',
+    'application/router',
+    'application/lib/constants'
+],
+function($, _, Backbone, Marionette, AppContext, AppRouter, Constants) {
 
-(function ($, _, Backbone, Marionette, Application) {
+    window.Application = new Marionette.Application();
 
     function hasClientUrl() {
         var hash = window.location.hash;
 
-        if (hash.length > Application.clientUrlPrefix.length) {
+        if (hash.length > Constants.clientUrlPrefix.length) {
             return true;
         }
 
-        if (Application.clientUrlPrefix.indexOf(hash) === 0) {
+        if (Constants.clientUrlPrefix.indexOf(hash) === 0) {
             return false;
         }
 
@@ -27,7 +37,7 @@ var Application;
             path = path.substring(1);
         }
 
-        return Application.clientUrlPrefix + path;
+        return Constants.clientUrlPrefix + path;
     }
 
     function configureHashUrls() {
@@ -94,9 +104,9 @@ var Application;
     }
 
     Application.on('start', function onStart(options) {
-        Application.context = new Application.Context(options);
+        Application.context = new AppContext(options);
 
-        Application.router = new Application.Router({
+        Application.router = new AppRouter({
             context: Application.context
         });
 
@@ -111,4 +121,5 @@ var Application;
 
     Application.clientUrl = clientUrl;
 
-}(jQuery, _, Backbone, Marionette, Application));
+    return Application;
+});
