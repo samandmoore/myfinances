@@ -1,27 +1,27 @@
 require.config({
-  paths : {
-    backbone: 'backbone',
-    underscore: 'underscore',
-    jquery: 'jquery-2.0.3',
-    marionette: 'marionette',
-    form: 'lib/form'
-  },
-  shim : {
-    jquery : {
-      exports : 'jQuery'
+    paths : {
+        backbone: 'backbone',
+        underscore: 'underscore',
+        jquery: 'jquery-2.0.3',
+        marionette: 'marionette',
+        form: 'lib/form'
     },
-    underscore : {
-      exports : '_'
-    },
-    backbone : {
-      deps : ['jquery', 'underscore'],
-      exports : 'Backbone'
-    },
-    marionette : {
-      deps : ['jquery', 'underscore', 'backbone'],
-      exports : 'Marionette'
+    shim : {
+        jquery : {
+            exports : 'jQuery'
+        },
+        underscore : {
+            exports : '_'
+        },
+        backbone : {
+            deps : ['jquery', 'underscore'],
+            exports : 'Backbone'
+        },
+        marionette : {
+            deps : ['jquery', 'underscore', 'backbone'],
+            exports : 'Marionette'
+        }
     }
-  }
 });
 
 require(
@@ -33,6 +33,9 @@ require(
     'application/application'
 ],
 function($, _, Backbone, Marionette, Application) {
+
+    // open this bad boy up to the entire window.
+    window.Application = Application;
 
     $(function () {
         Application.start({

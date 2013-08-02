@@ -10,7 +10,7 @@ define(
 ],
 function($, _, Backbone, Marionette, AppContext, AppRouter, Constants) {
 
-    window.Application = new Marionette.Application();
+    var Application = new Marionette.Application();
 
     function hasClientUrl() {
         var hash = window.location.hash;
