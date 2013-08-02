@@ -5,10 +5,6 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
 <t:layout>
-    <jsp:attribute name="headScripts">
-        <script data-main="/public/js/main" src="/public/js/require.js"></script>
-    </jsp:attribute>
-
     <jsp:attribute name="header">
         <div class="container">
 
@@ -25,6 +21,10 @@
             </div>
 
         </div>
+    </jsp:attribute>
+
+    <jsp:attribute name="bodyScripts">
+        <script data-main="/public/js/main" src="/public/js/require.js"></script>
     </jsp:attribute>
 
     <jsp:body>
