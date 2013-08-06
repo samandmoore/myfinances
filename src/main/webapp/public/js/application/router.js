@@ -13,7 +13,8 @@ function($, _, Backbone, Marionette, NavBarView, HomeView, AccountPage) {
     var Router = Backbone.Router.extend({
         routes: {
             '': 'home',
-            'accounts': 'accounts'
+            'accounts': 'accounts',
+            'accounts/new': 'createAccount'
         },
 
         initialize: function (options) {
@@ -31,6 +32,17 @@ function($, _, Backbone, Marionette, NavBarView, HomeView, AccountPage) {
                 new AccountPage({
                     accounts: this.context.accounts,
                     router: this
+                }),
+                'accounts'
+            );
+        },
+
+        createAccount: function () {
+            this.activate(
+                new AccountPage({
+                    accounts: this.context.accounts,
+                    router: this,
+                    perspective: 'create'
                 }),
                 'accounts'
             );

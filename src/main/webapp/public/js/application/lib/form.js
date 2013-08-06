@@ -1,10 +1,15 @@
-/**
-* amazingly awesome collection of jquery plugins from Kazi Manzur Rashid
-* built to work with Backbone JS and Twitter Bootstrap
-* source: https://raw.github.com/kazimanzurrashid/my-walletz-backbone/master/source/MyWalletz/Scripts/application/lib/form.js
-*/
+define(
+[
+    'underscore',
+    'jquery'
+],
+function (_, $) {
+    /**
+    * amazingly awesome collection of jquery plugins from Kazi Manzur Rashid
+    * built to work with Backbone JS and Twitter Bootstrap
+    * source: https://raw.github.com/kazimanzurrashid/my-walletz-backbone/master/source/MyWalletz/Scripts/application/lib/form.js
+    */
 
-(function($, _) {
     /**
     * turns turns form inputs into json
     */
@@ -190,4 +195,4 @@
             });
         };
     })();
-})(jQuery, _);
+});

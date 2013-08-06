@@ -31,7 +31,8 @@ require(
     'backbone',
     'marionette',
     'application/application',
-    'json2'
+    'json2',
+    'application/lib/form'
 ],
 function($, _, Backbone, Marionette, Application) {
 
