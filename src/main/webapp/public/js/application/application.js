@@ -6,10 +6,9 @@ define(
     'marionette',
     'application/context',
     'application/router',
-    'application/lib/constants',
-    'application/models/account'
+    'application/lib/constants'
 ],
-function($, _, Backbone, Marionette, AppContext, AppRouter, Constants, Account) {
+function($, _, Backbone, Marionette, AppContext, AppRouter, Constants) {
 
     var Application = new Marionette.Application();
 

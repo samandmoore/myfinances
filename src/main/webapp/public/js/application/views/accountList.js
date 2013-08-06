@@ -26,10 +26,6 @@ function($, _, Backbone, Marionette) {
 
         initialize: function (options) {
             this.router = options.router;
-        },
-
-        onRender: function () {
-            console.log('accounts list');
         }
     });
 
