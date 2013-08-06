@@ -8,7 +8,7 @@ define(
     'application/views/home',
     'application/views/accountPage'
 ],
-function($, _, Backbone, Marionette, NavBarView, HomeView, AccountPage) {
+function($, _, Backbone, Marionette, NavBarView, HomePage, AccountPage) {
 
     var Router = Backbone.Router.extend({
         routes: {
@@ -20,30 +20,38 @@ function($, _, Backbone, Marionette, NavBarView, HomeView, AccountPage) {
         initialize: function (options) {
             this.context = options.context;
 
-            this.navBar = new NavBarView();
+            this.initializeViews(options);
+        },
+
+        initializeViews: function (options) {
+            this.navBarView = new NavBarView();
+
+            this.homePage = new HomePage();
+
+            this.accountPage = new AccountPage({
+                accounts: this.context.accounts,
+                router: this
+            });
         },
 
         home: function() {
-            this.activate(new HomeView(), 'home');
+            this.activate(this.homePage, 'home');
         },
 
         accounts: function () {
+            this.accountPage.setPerspective('list');
+
             this.activate(
-                new AccountPage({
-                    accounts: this.context.accounts,
-                    router: this
-                }),
+                this.accountPage,
                 'accounts'
             );
         },
 
         createAccount: function () {
+            this.accountPage.setPerspective('create');
+
             this.activate(
-                new AccountPage({
-                    accounts: this.context.accounts,
-                    router: this,
-                    perspective: 'create'
-                }),
+                this.accountPage,
                 'accounts'
             );
         },
@@ -53,18 +61,10 @@ function($, _, Backbone, Marionette, NavBarView, HomeView, AccountPage) {
         * @param currentPage - an optional menu item name to set as active
         */
         activate: function (view, currentPage) {
-            if (this.currentView) {
-                if (this.currentView === view) {
-                    return;
-                }
-            }
+            Application.navBar.show(this.navBarView);
 
-            // set up the active menu item...
-            Application.navBar.show(this.navBar);
-            this.navBar.select(currentPage);
+            this.navBarView.select(currentPage);
 
-            // activate the current view
-            this.currentView = view;
             Application.mainContent.show(view);
         }
     });

@@ -16,10 +16,6 @@ function($, _, Backbone, Marionette, AccountListView, AccountCreateView) {
             contentPane: "#account-content"
         },
 
-        events: {
-            'click #new-account': 'showAddNewAccount'
-        },
-
         perspectives: {
             'list': null,
             'create': null
@@ -44,12 +40,8 @@ function($, _, Backbone, Marionette, AccountListView, AccountCreateView) {
             this.contentPane.show(this.perspectives[this.currentPerspective]);
         },
 
-        showAddNewAccount: function (e) {
-            e.preventDefault();
-
-            this.router.navigate('accounts/new');
-
-            this.contentPane.show(this.perspectives.create);
+        setPerspective: function (perspective) {
+            this.currentPerspective = perspective;
         }
     });
 

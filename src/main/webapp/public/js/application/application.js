@@ -61,7 +61,7 @@ function($, _, Backbone, Marionette, AppContext, AppRouter, Constants) {
             // Instruct Backbone to trigger routing events
             Application.router.navigate(url, { trigger: true });
 
-            return false
+            // return false;
         });
     }
 
