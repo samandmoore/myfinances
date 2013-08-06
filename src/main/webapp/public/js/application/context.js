@@ -2,12 +2,10 @@ define(
 [
     'jquery',
     'underscore',
-    'backbone',
-    'marionette',
     'application/models/account',
     'application/models/user'
 ],
-function($, _, Backbone, Marionette, Account, User) {
+function($, _, Account, User) {
 
     var Context = (function() {
 
