@@ -16,19 +16,15 @@ function($, _, Backbone, Marionette, AccountListView, AccountCreateView) {
             contentPane: "#account-content"
         },
 
+        // view ctors for each type of view may show
         perspectives: {
-            'list': null,
-            'create': null
+            'list': AccountListView,
+            'create': AccountCreateView
         },
 
         initialize: function (options) {
-            var self = this;
-
-            self.router = options.router;
-            self.accounts = options.accounts;
-
-            self.perspectives.list = AccountListView;
-            self.perspectives.create = AccountCreateView;
+            this.router = options.router;
+            this.accounts = options.accounts;
 
             this.currentPerspective = options.perspective || 'list';
 
@@ -41,9 +37,9 @@ function($, _, Backbone, Marionette, AccountListView, AccountCreateView) {
 
         onRender: function () {
             var self = this,
-                ctor = this.perspectives[this.currentPerspective];
+                ctor = self.perspectives[this.currentPerspective];
 
-            this.contentPane.show(
+            self.contentPane.show(
                 new ctor({
                     collection: self.accounts
                 })
