@@ -50,7 +50,7 @@ public class AccountsEndpoint {
         return Responses.createResponse(HttpStatus.OK, account);
     }
 
-    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity createAccount(@RequestBody final AccountCreateRequest request) {
         Account account = accountService.create(1L, request.getTitle());

@@ -16,7 +16,7 @@ function($, _, Backbone, Marionette, Validation, Constants) {
         },
 
         validate: function (attributes) {
-            if (!attributes.name) {
+            if (!attributes.title) {
                 this.addError('title', 'Title is required.');
             }
 
@@ -34,7 +34,7 @@ function($, _, Backbone, Marionette, Validation, Constants) {
                 }
             }
 
-            return _.isEmpty(errors) ? void(0) : errors;
+            return _.isEmpty(this.errors) ? void(0) : this.errors;
         }
     });
 

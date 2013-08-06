@@ -1,5 +1,7 @@
 package com.myfinances.accounts.inputs;
 
+import java.math.BigDecimal;
+
 /**
  * TODO: documentation
  *
@@ -8,6 +10,7 @@ package com.myfinances.accounts.inputs;
  */
 public class AccountCreateRequest {
     private String title;
+    private BigDecimal balance;
 
     public String getTitle() {
         return title;
@@ -15,5 +18,13 @@ public class AccountCreateRequest {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
     }
 }

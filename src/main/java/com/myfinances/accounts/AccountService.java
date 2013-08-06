@@ -63,6 +63,7 @@ public class AccountService implements IAccountService {
     @Override
     public Account create(Long creatorUserId, String name, Long... usersWithAccess) {
         Account a = getFakeAccount(++counter, creatorUserId);
+
         a.setTitle(name);
 
         accounts.add(a);

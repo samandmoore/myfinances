@@ -15,11 +15,12 @@ function($, _, Backbone, Marionette, Account, Helpers) {
             'submit form': 'onSave'
         },
 
-        initialize: function(options) {
-            this.form = this.$('form');
+        initialize: function (options) {
+            this.collection = options.collection;
         },
 
         onRender: function() {
+            this.form = this.$('form');
             this.form.putFocus();
         },
 
@@ -30,10 +31,10 @@ function($, _, Backbone, Marionette, Account, Helpers) {
 
             var account = new Account.Model();
 
-            // Helpers.subscribeModelInvalidEvent(account, this.form);
+            Helpers.subscribeModelInvalidEvent(account, this.form);
 
             var attributes = _.extend(this.form.serializeFields(), {
-                createdAt: new Date()
+                // createdAt: new Date()
             });
 
             if (!account.set(attributes, { validate: true })) {
@@ -42,18 +43,15 @@ function($, _, Backbone, Marionette, Account, Helpers) {
 
             var self = this;
 
-            this.collection.create(account, {
+            self.collection.create(account, {
                 wait: true,
                 validate: false,
                 success: function() {
-                    self.router.navigate(
-                        Application.clientUrl('/accounts'),
-                        true);
-                    $.showSuccessbar('New account created.');
+                    Application.vent.trigger('account:created', account);
                 },
                 error: function(model, jqxhr) {
-                    if (Views.Helpers.hasModelErrors(jqxhr)) {
-                        var modelErrors = Views.Helpers.getModelErrors(jqxhr);
+                    if (Helpers.hasModelErrors(jqxhr)) {
+                        var modelErrors = Helpers.getModelErrors(jqxhr);
                         if (modelErrors) {
                             self.form.showFieldErrors({
                                 errors: modelErrors
@@ -61,8 +59,6 @@ function($, _, Backbone, Marionette, Account, Helpers) {
                             return;
                         }
                     }
-                    $.showErrorbar('An unexpected error has occurred while ' +
-                        'creating new account.');
                 }
             });
         }

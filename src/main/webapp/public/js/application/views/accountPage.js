@@ -27,17 +27,33 @@ function($, _, Backbone, Marionette, AccountListView, AccountCreateView) {
             self.router = options.router;
             self.accounts = options.accounts;
 
-            self.perspectives.list = new AccountListView({
-                collection: self.accounts
-            });
-
-            self.perspectives.create = new AccountCreateView();
+            self.perspectives.list = AccountListView;
+            self.perspectives.create = AccountCreateView;
 
             this.currentPerspective = options.perspective || 'list';
+
+            this.bindToEvents();
+        },
+
+        bindToEvents: function () {
+            Application.vent.on('account:created', this.onAccountCreated, this);
         },
 
         onRender: function () {
-            this.contentPane.show(this.perspectives[this.currentPerspective]);
+            var self = this,
+                ctor = this.perspectives[this.currentPerspective];
+
+            this.contentPane.show(
+                new ctor({
+                    collection: self.accounts
+                })
+            );
+        },
+
+        onAccountCreated: function (account) {
+            this.setPerspective('list');
+            this.router.navigate('/accounts');
+            this.onRender();
         },
 
         setPerspective: function (perspective) {
