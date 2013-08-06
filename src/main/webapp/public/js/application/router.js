@@ -6,9 +6,9 @@ define(
     'marionette',
     'application/views/navBar',
     'application/views/home',
-    'application/views/accountList'
+    'application/views/accountPage'
 ],
-function($, _, Backbone, Marionette, NavBarView, HomeView, AccountListView) {
+function($, _, Backbone, Marionette, NavBarView, HomeView, AccountPage) {
 
     var Router = Backbone.Router.extend({
         routes: {
@@ -28,8 +28,8 @@ function($, _, Backbone, Marionette, NavBarView, HomeView, AccountListView) {
 
         accounts: function () {
             this.activate(
-                new AccountListView({
-                    collection: this.context.accounts,
+                new AccountPage({
+                    accounts: this.context.accounts,
                     router: this
                 }),
                 'accounts'

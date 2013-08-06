@@ -10,10 +10,6 @@ function($, _, Backbone, Marionette) {
     var NavBar = Marionette.ItemView.extend({
         template: '#navBar',
 
-        onRender: function () {
-            console.log('navBar');
-        },
-
         select: function(currentPage) {
             return this.deselectAll().filter('.' + currentPage).addClass('active');
         },
