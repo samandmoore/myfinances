@@ -7,13 +7,13 @@ package com.myfinances.accounts.inputs;
  * @since 7/22/13 10:50 PM
  */
 public class AccountCreateRequest {
-    private String name;
+    private String title;
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

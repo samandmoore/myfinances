@@ -6,9 +6,10 @@ define(
     'marionette',
     'application/context',
     'application/router',
-    'application/lib/constants'
+    'application/lib/constants',
+    'application/models/account'
 ],
-function($, _, Backbone, Marionette, AppContext, AppRouter, Constants) {
+function($, _, Backbone, Marionette, AppContext, AppRouter, Constants, Account) {
 
     var Application = new Marionette.Application();
 
@@ -120,6 +121,10 @@ function($, _, Backbone, Marionette, AppContext, AppRouter, Constants) {
     });
 
     Application.clientUrl = clientUrl;
+
+    Application.addAccount = function (attrs) {
+        this.context.accounts.add(new Account.Model(attrs));
+    }
 
     return Application;
 });

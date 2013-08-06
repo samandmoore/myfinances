@@ -10,16 +10,14 @@ define(
 function($, _, Backbone, Marionette, Validation, Constants) {
 
     var Account = Backbone.Model.extend({
-        defaults: function () {
-            return {
-                name: null,
-                balance: 0
-            };
+        defaults: {
+            title: null,
+            balance: 0
         },
 
         validate: function (attributes) {
             if (!attributes.name) {
-                this.addError('name', 'Name is required.');
+                this.addError('title', 'Title is required.');
             }
 
             if (attributes.balance == null) {

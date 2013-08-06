@@ -33,7 +33,7 @@ public class AccountService implements IAccountService {
     private static Account getFakeAccount(final Long id, final Long userId, final Long... accessors) {
         Account a = new Account();
         a.setId(id);
-        a.setName("Account " + id.toString());
+        a.setTitle("Account " + id.toString());
         a.setCreatedByUserId(userId);
         a.setMemberUserIds(Lists.newArrayList(accessors));
 
@@ -63,7 +63,7 @@ public class AccountService implements IAccountService {
     @Override
     public Account create(Long creatorUserId, String name, Long... usersWithAccess) {
         Account a = getFakeAccount(++counter, creatorUserId);
-        a.setName(name);
+        a.setTitle(name);
 
         accounts.add(a);
 
