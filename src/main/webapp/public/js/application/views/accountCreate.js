@@ -34,7 +34,7 @@ function($, _, Backbone, Marionette, Account, Helpers) {
             Helpers.subscribeModelInvalidEvent(account, this.form);
 
             var attributes = _.extend(this.form.serializeFields(), {
-                // createdAt: new Date()
+                'createdByUserId': Application.context.user.get('id')
             });
 
             if (!account.set(attributes, { validate: true })) {

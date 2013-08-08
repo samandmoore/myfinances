@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 public class AccountCreateRequest {
     private String title;
     private BigDecimal balance;
+    private Long createdByUserId;
 
     public String getTitle() {
         return title;
@@ -26,5 +27,13 @@ public class AccountCreateRequest {
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    public Long getCreatedByUserId() {
+        return createdByUserId;
+    }
+
+    public void setCreatedByUserId(Long userId) {
+        this.createdByUserId = userId;
     }
 }

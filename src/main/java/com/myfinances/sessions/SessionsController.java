@@ -4,6 +4,8 @@ import com.myfinances.auth.IAuthService;
 import com.myfinances.users.IUserService;
 import com.myfinances.users.User;
 import com.myfinances.sessions.inputs.LoginInput;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -44,6 +46,7 @@ public class SessionsController {
         User user = userService.findByUsernameAndPassword(input.getUsername(), input.getPassword());
 
         if (user != null) {
+            userService.recordLogin(user);
             authService.login(request, response, user);
             response.sendRedirect("/");
             return null;

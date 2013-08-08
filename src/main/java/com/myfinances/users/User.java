@@ -1,23 +1,21 @@
 package com.myfinances.users;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.Type;
+import org.jadira.usertype.dateandtime.joda.PersistentDateTime;
+import org.joda.time.DateTime;
+
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
 
-    User(Long id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.hashedPassword = password;
-    }
-
-    @Id
-    @GeneratedValue
     private Long id;
 
     private String username;
@@ -32,13 +30,17 @@ public class User {
     private String emailAddress;
 
     // auditing fields
-    private Date createdAt;
-    private Date lastLoggedInAt;
+    private DateTime createdAt;
+
+    private DateTime lastLoggedInAt;
 
     // password reset fields
     private String passwordResetToken;
-    private Date passwordResetTokenExpiration;
 
+    private DateTime passwordResetTokenExpiration;
+
+    @Id
+    @GeneratedValue
     public Long getId() {
         return id;
     }
@@ -47,6 +49,7 @@ public class User {
         this.id = id;
     }
 
+    @Column(nullable = false)
     public String getUsername() {
         return username;
     }
@@ -55,6 +58,7 @@ public class User {
         this.username = username;
     }
 
+    @Column(nullable = false)
     public String getHashedPassword() {
         return hashedPassword;
     }
@@ -71,6 +75,7 @@ public class User {
         this.unconfirmedEmailAddress = unconfirmedEmailAddress;
     }
 
+    @Column(nullable = false)
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -79,19 +84,23 @@ public class User {
         this.emailAddress = emailAddress;
     }
 
-    public Date getCreatedAt() {
+    @Column(nullable = false)
+    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    public DateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(DateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getLastLoggedInAt() {
+    @Column
+    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    public DateTime getLastLoggedInAt() {
         return lastLoggedInAt;
     }
 
-    public void setLastLoggedInAt(Date lastLoggedInAt) {
+    public void setLastLoggedInAt(DateTime lastLoggedInAt) {
         this.lastLoggedInAt = lastLoggedInAt;
     }
 
@@ -103,11 +112,13 @@ public class User {
         this.passwordResetToken = passwordResetToken;
     }
 
-    public Date getPasswordResetTokenExpiration() {
+    @Column
+    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    public DateTime getPasswordResetTokenExpiration() {
         return passwordResetTokenExpiration;
     }
 
-    public void setPasswordResetTokenExpiration(Date passwordResetTokenExpiration) {
+    public void setPasswordResetTokenExpiration(DateTime passwordResetTokenExpiration) {
         this.passwordResetTokenExpiration = passwordResetTokenExpiration;
     }
 

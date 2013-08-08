@@ -3,6 +3,7 @@ package com.myfinances.accounts;
 import com.google.common.collect.Lists;
 import com.myfinances.accounts.inputs.AccountCreateRequest;
 import com.myfinances.accounts.inputs.AccountFetchRequest;
+import com.myfinances.auth.IAuthService;
 import com.myfinances.common.ModelState;
 import com.myfinances.http.Responses;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class AccountsEndpoint {
 
     @Autowired
     private IAccountService accountService;
+
+    @Autowired
+    private IAuthService authService;
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
@@ -53,7 +57,7 @@ public class AccountsEndpoint {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity createAccount(@RequestBody final AccountCreateRequest request) {
-        Account account = accountService.create(1L, request.getTitle());
+        Account account = accountService.create(request.getCreatedByUserId(), request.getTitle());
 
         return Responses.createResponse(HttpStatus.CREATED, account);
     }

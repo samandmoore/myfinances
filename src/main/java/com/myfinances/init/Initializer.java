@@ -4,6 +4,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
+import com.myfinances.users.IUserService;
+import com.myfinances.users.UserService;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -16,8 +18,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 public class Initializer implements WebApplicationInitializer {
 
     @Override
-    public void onStartup(ServletContext servletContext)
-            throws ServletException {
+    public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
         ctx.register(Bootstrapper.class);
         servletContext.addListener(new ContextLoaderListener(ctx));

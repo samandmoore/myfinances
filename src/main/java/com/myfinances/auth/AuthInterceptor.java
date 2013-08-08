@@ -1,7 +1,10 @@
 package com.myfinances.auth;
 
+import com.myfinances.users.IUserService;
 import com.myfinances.users.User;
+import com.myfinances.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.Assert;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -11,10 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 
     private final IAuthService authService;
+    private static final boolean ranOnce = false;
 
     @Autowired
-    public AuthInterceptor(IAuthService authService) {
+    public AuthInterceptor(IAuthService authService, IUserService userService) {
         this.authService = authService;
+
+        userService.create("sam", "samandmoore@gmail.com", "asdfasdf");
     }
 
     @Override

@@ -1,10 +1,13 @@
 package com.myfinances.accounts;
 
 import com.google.common.collect.Lists;
+import org.hibernate.annotations.Type;
+import org.joda.time.DateTime;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,11 +24,16 @@ import javax.persistence.Transient;
 @Table(name = "accounts")
 public class Account implements Serializable {
     private Long id;
+
     private String title;
+
     private BigDecimal balance;
+
+    private DateTime createdAt;
 
     // relationships
     private Long createdByUserId;
+
     private List<Long> memberUserIds;
 
     public Account() {
@@ -42,6 +50,7 @@ public class Account implements Serializable {
         this.id = id;
     }
 
+    @Column(nullable = false)
     public String getTitle() {
         return title;
     }
@@ -50,6 +59,7 @@ public class Account implements Serializable {
         this.title = title;
     }
 
+    @Column(nullable = false)
     public Long getCreatedByUserId() {
         return createdByUserId;
     }
@@ -67,11 +77,22 @@ public class Account implements Serializable {
         this.memberUserIds = memberUserIds;
     }
 
+    @Column(nullable = false)
     public BigDecimal getBalance() {
         return balance;
     }
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    @Column(nullable = false)
+    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    public DateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(DateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }
