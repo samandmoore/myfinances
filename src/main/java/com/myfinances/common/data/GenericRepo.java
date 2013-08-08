@@ -1,4 +1,4 @@
-package com.myfinances.accounts;
+package com.myfinances.common.data;
 
 import java.io.Serializable;
 import java.util.List;
