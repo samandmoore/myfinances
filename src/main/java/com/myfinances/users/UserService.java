@@ -26,7 +26,7 @@ public class UserService implements IUserService {
 
     @Override
     public User findByUsernameAndPassword(final String username, final String password) {
-        User user = userRepo.findByUsername(username);
+        User user = userRepo.findByUsernameOrEmail(username);
 
         if (user == null) {
             return null;
@@ -41,7 +41,7 @@ public class UserService implements IUserService {
 
     @Override
     public User create(String username, String email, String password) {
-        User user = userRepo.findByUsername(username);
+        User user = userRepo.findByUsernameOrEmail(username);
         user = user == null ? new User() : user;
 
         user.setEmailAddress(email);
