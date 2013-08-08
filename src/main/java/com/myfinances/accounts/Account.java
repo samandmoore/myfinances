@@ -1,5 +1,6 @@
 package com.myfinances.accounts;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
@@ -94,5 +95,25 @@ public class Account implements Serializable {
 
     public void setCreatedAt(DateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getId(), getTitle());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;  // test for reference equality
+        if (obj == null) return false; // test for null
+
+        if (!(obj instanceof Account)) {
+            return false;
+        }
+
+        final Account other = (Account) obj;
+
+        return Objects.equal(getId(), other.getId())
+                && Objects.equal(getTitle(), other.getTitle());
     }
 }

@@ -8,6 +8,7 @@ import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.google.common.base.Objects;
 import org.hibernate.annotations.Type;
 import org.jadira.usertype.dateandtime.joda.PersistentDateTime;
 import org.joda.time.DateTime;
@@ -125,5 +126,26 @@ public class User implements Serializable {
     public void clearPasswordReset() {
         this.passwordResetToken = null;
         this.passwordResetTokenExpiration = null;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getId(), getUsername(), getEmailAddress());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;  // test for reference equality
+        if (obj == null) return false; // test for null
+
+        if (!(obj instanceof User)) {
+            return false;
+        }
+
+        final User other = (User) obj;
+
+        return Objects.equal(getId(), other.getId())
+                && Objects.equal(getUsername(), other.getUsername())
+                && Objects.equal(getEmailAddress(), other.getEmailAddress());
     }
 }
