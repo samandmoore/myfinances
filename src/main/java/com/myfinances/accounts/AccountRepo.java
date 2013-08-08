@@ -1,6 +1,6 @@
 package com.myfinances.accounts;
 
-import com.myfinances.common.data.HibernateRepo;
+import com.myfinances.persistence.HibernateRepo;
 import org.springframework.stereotype.Repository;
 
 /**

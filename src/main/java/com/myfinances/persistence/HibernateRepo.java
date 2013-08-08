@@ -1,4 +1,4 @@
-package com.myfinances.common.data;
+package com.myfinances.persistence;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
