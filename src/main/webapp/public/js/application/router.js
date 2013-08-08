@@ -6,15 +6,17 @@ define(
     'marionette',
     'application/views/navBar',
     'application/views/home',
-    'application/views/accountPage'
+    'application/views/accountPage',
+    'application/views/categoriesPage'
 ],
-function($, _, Backbone, Marionette, NavBarView, HomePage, AccountPage) {
+function($, _, Backbone, Marionette, NavBarView, HomePage, AccountPage, CategoriesPage) {
 
     var Router = Backbone.Router.extend({
         routes: {
             '': 'home',
             'accounts': 'accounts',
-            'accounts/new': 'createAccount'
+            'accounts/new': 'createAccount',
+            'categories': 'categories'
         },
 
         initialize: function (options) {
@@ -30,6 +32,11 @@ function($, _, Backbone, Marionette, NavBarView, HomePage, AccountPage) {
 
             this.accountPage = new AccountPage({
                 accounts: this.context.accounts,
+                router: this
+            });
+
+            this.categoriesPage = new CategoriesPage({
+                // categories: this.context.categories,
                 router: this
             });
         },
@@ -53,6 +60,15 @@ function($, _, Backbone, Marionette, NavBarView, HomePage, AccountPage) {
             this.activate(
                 this.accountPage,
                 'accounts'
+            );
+        },
+
+        categories: function () {
+            this.categoriesPage.setPerspective('list');
+
+            this.activate(
+                this.categoriesPage,
+                'categories'
             );
         },
 
