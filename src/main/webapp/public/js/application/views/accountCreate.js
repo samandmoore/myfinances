@@ -8,6 +8,7 @@ define(
     'application/views/helpers'
 ],
 function($, _, Backbone, Marionette, Account, Helpers) {
+
     var AccountCreateView = Backbone.Marionette.ItemView.extend({
         template: '#account-new',
 
@@ -25,23 +26,25 @@ function($, _, Backbone, Marionette, Account, Helpers) {
         },
 
         onSave: function(e) {
+            var attributes = {},
+                self = this,
+                account = null;
+
             e.preventDefault();
 
-            this.form.hideFieldErrors();
+            self.form.hideFieldErrors();
 
-            var account = new Account.Model();
+            account = new Account.Model();
 
-            Helpers.subscribeModelInvalidEvent(account, this.form);
+            Helpers.subscribeModelInvalidEvent(account, self.form);
 
-            var attributes = _.extend(this.form.serializeFields(), {
+            attributes = _.extend(self.form.serializeFields(), {
                 'createdByUserId': Application.context.user.get('id')
             });
 
             if (!account.set(attributes, { validate: true })) {
                 return;
             }
-
-            var self = this;
 
             self.collection.create(account, {
                 wait: true,
