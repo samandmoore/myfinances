@@ -20,7 +20,7 @@ public class Category {
     private Long id;
     private String title;
 
-    private CategoryType categoryType;
+    private CategoryType type;
 
     @Id
     @GeneratedValue
@@ -43,12 +43,12 @@ public class Category {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    public CategoryType getCategoryType() {
-        return categoryType;
+    public CategoryType getType() {
+        return type;
     }
 
-    public void setCategoryType(CategoryType categoryType) {
-        this.categoryType = categoryType;
+    public void setType(CategoryType type) {
+        this.type = type;
     }
 
     @Override

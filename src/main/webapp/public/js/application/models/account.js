@@ -34,7 +34,7 @@ function($, _, Backbone, Marionette, Validation, Constants) {
                 }
             }
 
-            return _.isEmpty(this.errors) ? void(0) : this.errors;
+            return _.isEmpty(this.errors) ? null : this.errors;
         }
     });
 

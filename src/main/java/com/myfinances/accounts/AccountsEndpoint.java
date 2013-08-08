@@ -61,13 +61,4 @@ public class AccountsEndpoint {
 
         return Responses.createResponse(HttpStatus.CREATED, account);
     }
-
-    @RequestMapping(value = "/errors", method = RequestMethod.POST)
-    @ResponseBody
-    public ResponseEntity createErrors(@RequestBody final AccountCreateRequest request) {
-        ModelState modelState = new ModelState();
-        modelState.add("name", "too short", "bad choice", "i don't like it");
-
-        return Responses.createErrorResponse(HttpStatus.CONFLICT, modelState);
-    }
 }
