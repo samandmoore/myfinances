@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:beans="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
         http://www.springframework.org/schema/context
@@ -15,13 +16,13 @@
 
     <!-- Scans the classpath for annotated components that will be auto-registered as Spring beans.
      For example @Controller and @Service. Make sure to set the correct base-package-->
-    <context:component-scan base-package="com.myfinances" />
+    <!--<context:component-scan base-package="com.myfinances" />-->
 
-    <context:property-placeholder location="classpath:myfinances.properties"/>
+    <!--<context:property-placeholder location="classpath:myfinances.properties"/>-->
 
     <!-- Configures the annotation-driven Spring MVC Controller programming model.
     Note that, with Spring 3.0, this tag works in Servlet MVC only!  -->
-    <mvc:annotation-driven />
+    <!--<mvc:annotation-driven />-->
 
     <!-- register interceptors -->
     <mvc:interceptors>

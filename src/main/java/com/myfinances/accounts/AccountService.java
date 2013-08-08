@@ -3,6 +3,7 @@ package com.myfinances.accounts;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Nullable;
@@ -39,6 +40,9 @@ public class AccountService implements IAccountService {
 
         return a;
     }
+
+    @Autowired
+    private AccountRepo accountRepo;
 
     @Override
     public Account getById(final Long id) {

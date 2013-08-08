@@ -2,8 +2,14 @@ package com.myfinances.accounts;
 
 import com.google.common.collect.Lists;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * TODO: documentation
@@ -11,7 +17,9 @@ import java.util.List;
  * @author sam
  * @since 7/22/13 9:46 PM
  */
-public class Account {
+@Entity
+@Table(name = "accounts")
+public class Account implements Serializable {
     private Long id;
     private String title;
     private BigDecimal balance;
@@ -24,6 +32,8 @@ public class Account {
         memberUserIds = Lists.newArrayList();
     }
 
+    @Id
+    @GeneratedValue
     public Long getId() {
         return id;
     }
@@ -48,6 +58,7 @@ public class Account {
         this.createdByUserId = createdByUserId;
     }
 
+    @Transient
     public List<Long> getMemberUserIds() {
         return memberUserIds;
     }
