@@ -11,8 +11,8 @@
     <properties>
         <java.version>1.7</java.version>
         <spring.version>3.2.3.RELEASE</spring.version>
-        <hibernate.version>4.2.0.Final</hibernate.version>
-        <mysql.connector.version>5.1.21</mysql.connector.version>
+        <hibernate.version>4.2.3.Final</hibernate.version>
+        <mysql.connector.version>5.1.26</mysql.connector.version>
     </properties>
 
     <dependencies>
@@ -20,13 +20,13 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.11</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
-            <version>1.9.0</version>
+            <version>1.9.5</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>12.0</version>
+            <version>14.0.1</version>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
@@ -164,16 +164,6 @@
                     <port>9090</port>
                     <!-- application path always starts with /-->
                     <path>/</path>
-                    <!-- optional path to a context file -->
-                    <!--<contextFile>/Users/olamy/dev/tomcat-context-archiva-gmail.xml</contextFile>-->
-                    <!-- optional system propoerties you want to add -->
-                    <!--<systemProperties>
-                        <appserver.base>/Users/olamy/dev/sources/tomcat/maven-plugin-svn/target/checkout/target/appserver-base</appserver.base>
-                        <appserver.home>/Users/olamy/dev/sources/tomcat/maven-plugin-svn/target/checkout/target/appserver-home</appserver.home>
-                        <derby.system.home>/Users/olamy/dev/sources/tomcat/maven-plugin-svn/target/checkout/target/appserver-base/logs</derby.system.home>
-                        <java.io.tmpdir>/Users/olamy/dev/sources/tomcat/maven-plugin-svn/target/checkout/target</java.io.tmpdir>
-                    </systemProperties>-->
-                    <!-- if you want to use test dependencies rather than only runtime -->
                     <useTestClasspath>false</useTestClasspath>
                     <!-- optional if you want to add some extra directories into the classloader -->
                     <additionalClasspathDirs>
