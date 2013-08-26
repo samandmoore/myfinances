@@ -18,7 +18,7 @@ import org.apache.commons.codec.binary.Base64;
 @Component
 public class EncryptionService implements IEncryptionService {
 
-    private final char[] PASSWORD;
+    private char[] PASSWORD;
 
     private static final byte[] SALT = {
         (byte) 0xde, (byte) 0x33, (byte) 0x10, (byte) 0x12,
@@ -56,4 +56,7 @@ public class EncryptionService implements IEncryptionService {
         return Base64.decodeBase64(property);
     }
 
+    void setSecret(String secret) {
+        PASSWORD = secret.toCharArray();
+    }
 }
