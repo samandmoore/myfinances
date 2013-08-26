@@ -10,7 +10,7 @@ define(
 function($, _, Backbone, Marionette, Account, Helpers) {
 
     var AccountCreateView = Backbone.Marionette.ItemView.extend({
-        template: '#account-new',
+        template: '#accounts/new',
 
         events: {
             'submit form': 'onSave'
