@@ -10,7 +10,7 @@ define(
 function($, _, Backbone, Marionette, AccountListView, AccountCreateView) {
 
     var AccountPageLayout = Backbone.Marionette.Layout.extend({
-        template: "#account-page-layout",
+        template: "#accounts/layout",
 
         regions: {
             contentPane: "#account-content"

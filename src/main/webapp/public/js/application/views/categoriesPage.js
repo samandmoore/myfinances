@@ -8,7 +8,7 @@ define(
 function($, _, Backbone, Marionette) {
 
     var CategoriesPageLayout = Backbone.Marionette.Layout.extend({
-        template: "#categories-page-layout",
+        template: "#categories/layout",
 
         regions: {
             contentPane: "#categories-content"

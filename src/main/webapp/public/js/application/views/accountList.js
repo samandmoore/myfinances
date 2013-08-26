@@ -8,12 +8,12 @@ define(
 function($, _, Backbone, Marionette) {
 
     var AccountListItem = Marionette.ItemView.extend({
-        template: '#account-list-item',
+        template: '#accounts/list-item',
         tagName: 'tr'
     });
 
     var AccountList = Marionette.CompositeView.extend({
-        template: '#account-list',
+        template: '#accounts/list',
 
         itemView: AccountListItem,
 
@@ -21,7 +21,7 @@ function($, _, Backbone, Marionette) {
 
         emptyView: Marionette.ItemView.extend({
                         tagName: 'tr',
-                        template: "#account-list-empty"
+                        template: "#accounts/list-empty"
                     }),
 
         initialize: function (options) {
