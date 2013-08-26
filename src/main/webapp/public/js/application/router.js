@@ -6,8 +6,8 @@ define(
     'marionette',
     'application/views/navBar',
     'application/views/home',
-    'application/views/accountPage',
-    'application/views/categoriesPage'
+    'application/views/accounts/page',
+    'application/views/categories/page'
 ],
 function($, _, Backbone, Marionette, NavBarView, HomePage, AccountPage, CategoriesPage) {
 
@@ -31,12 +31,12 @@ function($, _, Backbone, Marionette, NavBarView, HomePage, AccountPage, Categori
             this.homePage = new HomePage();
 
             this.accountPage = new AccountPage({
-                accounts: this.context.accounts,
+                pageCollection: this.context.accounts,
                 router: this
             });
 
             this.categoriesPage = new CategoriesPage({
-                // categories: this.context.categories,
+                // pageCollection: this.context.categories,
                 router: this
             });
         },
