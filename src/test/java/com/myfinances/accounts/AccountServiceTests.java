@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 public class AccountServiceTests {
 
     @Mock
-    private AccountRepo accountRepo;
+    private AccountRepo accountRepoMock;
 
     @InjectMocks
     private final IAccountService accountService = new AccountService();
@@ -38,6 +38,32 @@ public class AccountServiceTests {
         Assert.assertEquals(userId, account.getCreatedByUserId());
         Assert.assertEquals(title, account.getTitle());
 
-        Mockito.verify(accountRepo).add(account);
+        Mockito.verify(accountRepoMock).add(account);
+    }
+
+    @Test
+    public void getById_returns_null_for_missing_id() {
+        final Long accountId = 114324L;
+
+        Account account = accountService.getById(accountId);
+
+        Mockito.verify(accountRepoMock).find(accountId);
+        Assert.assertNull(account);
+    }
+
+    @Test
+    public void getById_returns_account_for_proper_id() {
+        final Long accountId = 114324L;
+
+        Account account = new Account();
+        account.setId(accountId);
+
+        Mockito.when(accountRepoMock.find(accountId)).thenReturn(account);
+
+        Account result = accountService.getById(accountId);
+
+        Mockito.verify(accountRepoMock).find(accountId);
+        Assert.assertNotNull(account);
+        Assert.assertEquals(account, result);
     }
 }
